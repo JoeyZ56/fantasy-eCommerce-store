@@ -55,7 +55,7 @@ export default function Navbar() {
             {({ active }) => (
               <a
                 className={`${active && "bg-blue-500"}`}
-                href="/account-settings"
+                href="/create-account"
               >
                 Create Account
               </a>
@@ -63,10 +63,7 @@ export default function Navbar() {
           </Menu.Item>
           <Menu.Item>
             {({ active }) => (
-              <a
-                className={`${active && "bg-blue-500"}`}
-                href="/account-settings"
-              >
+              <a className={`${active && "bg-blue-500"}`} href="/login">
                 Login
               </a>
             )}
