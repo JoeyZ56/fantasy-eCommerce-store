@@ -1,5 +1,6 @@
 import { Menu } from "@headlessui/react";
 import "./Nav.scss";
+import LogoutButton from "../LogoutButton";
 
 export default function Navbar() {
   return (
@@ -66,14 +67,7 @@ export default function Navbar() {
             )}
           </Menu.Item>
           <Menu.Item>
-            {({ active }) => (
-              <a
-                className={`${active && "bg-blue-500"}`}
-                href="/account-settings"
-              >
-                Logout
-              </a>
-            )}
+            <LogoutButton />
           </Menu.Item>
         </Menu.Items>
       </div>

@@ -1,34 +1,53 @@
+import Images from "../src/assets/index";
+
 const PRODUCTS = {
   Armors: [
     {
       id: 1,
-      name: "Eldrich Knight Armor",
-      image:
-        "https://cdn.ecommercedns.uk/files/9/210639/7/1250647/negroli-armour-set-iron-1.jpg",
+      name: "Bronze Knight Armor",
+      image: Images.BknightArmor,
       price: "1,200.89",
       description: "Dark Knight Armor, for the dark adventurer.",
     },
     {
       id: 2,
-      name: "Lionheart Champion Armor",
-      image:
-        "https://www.creativeuncut.com/gallery-39/art/wowbfa-warfront-armor-set.jpg",
+      name: "Crusader Chainmail",
+      image: Images.CruChainmail,
       price: "10,000.00",
       description: "Champion Armor of the best of the best Adventures .",
     },
     {
       id: 3,
       name: "Dark Justice Armor",
-      image:
-        "https://i.pinimg.com/originals/7a/32/73/7a32739725bba4eabf05dc444b5d8353.jpg",
+      image: Images.DarkgrayKightArmor,
       price: "4,999.99",
       description: "Armor of the Dark Justice, for the dark adventurer.",
     },
     {
       id: 4,
-      name: "Basic Plate Armor",
-      image:
-        "http://cdn.ecommercedns.uk/files/9/210639/9/5142659/larp-armour-extra-large-medieval-armour-set-4.jpg",
+      name: "Golden Eagle Armor",
+      image: Images.GoldenEagleArmor,
+      price: "999.99",
+      description: "Basic Plate Armor, for the basic adventurer.",
+    },
+    {
+      id: 5,
+      name: "Leather Armor",
+      image: Images.LeatherArmor,
+      price: "999.99",
+      description: "Basic Plate Armor, for the basic adventurer.",
+    },
+    {
+      id: 6,
+      name: "Leather Ranger Armor",
+      image: Images.RangerArmor,
+      price: "999.99",
+      description: "Basic Plate Armor, for the basic adventurer.",
+    },
+    {
+      id: 7,
+      name: "Viking Armor",
+      image: Images.VikingArmor,
       price: "999.99",
       description: "Basic Plate Armor, for the basic adventurer.",
     },
@@ -36,41 +55,72 @@ const PRODUCTS = {
 
   Weapons: [
     {
-      id: 5,
-      name: "Knights Sword",
-      image:
-        "https://tse3.mm.bing.net/th?id=OIP.8WNSfIOsyxbXRvPwikja4QHaE7&pid=Api&P=0&h=180",
+      id: 9,
+      name: "Dark Short Sword",
+      image: Images.DarkShortSword,
       price: "699.00",
       description: "Classic Knights Sword, for the classic adventurer.",
     },
     {
-      id: 6,
-      name: "Two Handed Battle Axe",
-      image:
-        "https://tse4.mm.bing.net/th?id=OIP.vQhwv5QIzLlb6GcRb_TpGAHaEo&pid=Api&P=0&h=180",
-      price: "1300.00",
-      description: "Two Handed Battle Axe, for the strong adventurer.",
+      id: 10,
+      name: "Flail",
+      image: Images.Flail,
+      price: "699.00",
+      description: "Classic Knights Sword, for the classic adventurer.",
     },
     {
-      id: 7,
-      name: "War Mace",
-      image:
-        "https://tse1.mm.bing.net/th?id=OIP.K27iO2oSt_jJwphVahjQKgHaFc&pid=Api&P=0&h=180",
-      price: "",
-      description: "Durability and Strength, for the strong adventurer.",
+      id: 11,
+      name: "Iron Dagger",
+      image: Images.IronDagger,
+      price: "699.00",
+      description: "Classic Knights Sword, for the classic adventurer.",
     },
     {
-      id: 8,
+      id: 12,
       name: "Morning Star",
-      image:
-        "https://tse1.mm.bing.net/th?id=OIP.D501e09dc-7RikNZFAYWAgHaF7&pid=Api&P=0&h=180",
-      price: "799.99",
-      description: "Flail, for the strong adventurer.",
+      image: Images.MorningStar,
+      price: "699.00",
+      description: "Classic Knights Sword, for the classic adventurer.",
+    },
+    {
+      id: 13,
+      name: "Simple Dagger",
+      image: Images.SimpleDagger,
+      price: "699.00",
+      description: "Classic Knights Sword, for the classic adventurer.",
+    },
+    {
+      id: 14,
+      name: "Simple Short Sword",
+      image: Images.SimpleShortSword,
+      price: "699.00",
+      description: "Classic Knights Sword, for the classic adventurer.",
+    },
+    {
+      id: 15,
+      name: "Throwing Axe",
+      image: Images.ThrowingAxe,
+      price: "699.00",
+      description: "Classic Knights Sword, for the classic adventurer.",
+    },
+    {
+      id: 16,
+      name: "Two Handed Axe",
+      image: Images.TwohandedAxe,
+      price: "699.00",
+      description: "Classic Knights Sword, for the classic adventurer.",
+    },
+    {
+      id: 17,
+      name: "Viking Dagger",
+      image: Images.VikingDagger,
+      price: "699.00",
+      description: "Classic Knights Sword, for the classic adventurer.",
     },
   ],
   Potions: [
     {
-      id: 9,
+      id: 18,
       name: "Love Potion",
       image:
         "https://tse2.mm.bing.net/th?id=OIP.AaWjS1XZvO5Zi4xnL1Cq_gHaE8&pid=Api&P=0&h=180",
@@ -78,7 +128,7 @@ const PRODUCTS = {
       description: "For the lonely adventurer.",
     },
     {
-      id: 10,
+      id: 19,
       name: "Shape Shifting Potion",
       image:
         "https://tse2.mm.bing.net/th?id=OIP.nnsNvXzPJiYmCxIzbOW9HQHaEo&pid=Api&P=0&h=180",
@@ -86,7 +136,7 @@ const PRODUCTS = {
       description: "Shape Shifting Potion, for the Sneaky adventurer.",
     },
     {
-      id: 11,
+      id: 20,
       name: "Stamina Potion",
       image:
         "https://tse1.mm.bing.net/th?id=OIP.ZGSQFVaT-LLgRJfuZVvZSAHaEo&pid=Api&P=0&h=180",
@@ -94,12 +144,26 @@ const PRODUCTS = {
       description: "Stamina Potion, for the weary adventurer.",
     },
     {
-      id: 12,
+      id: 21,
       name: "Mana Potion",
       image:
         "https://tse3.mm.bing.net/th?id=OIP.Bu8sivUY5lBlAj1b5tDRNgHaIr&pid=Api&P=0&h=180",
       price: "99.99",
       description: "Mana Potion, for mages who need recovery.",
+    },
+    {
+      id: 22,
+      name: "Health Potion",
+      image: Images.Hpotion,
+      price: "699.00",
+      description: "Classic Knights Sword, for the classic adventurer.",
+    },
+    {
+      id: 23,
+      name: "Wraith Potion",
+      image: Images.WraithPotion,
+      price: "699.00",
+      description: "Classic Knights Sword, for the classic adventurer.",
     },
   ],
   Scrolls: [
