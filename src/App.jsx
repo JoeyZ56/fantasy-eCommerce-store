@@ -7,6 +7,7 @@ import Weapons from "./pages/Weapons/Weapons";
 import Potions from "./pages/Potions/Potions";
 import Scrolls from "./pages/Scrolls/Scrolls";
 import Login from "./pages/Login/Login";
+import Signup from "./pages/Signup/Signup";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/potions" element={<Potions />} />
         <Route path="/scrolls" element={<Scrolls />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </BrowserRouter>
   );

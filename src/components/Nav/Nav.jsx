@@ -53,10 +53,7 @@ export default function Navbar() {
           </Menu.Item>
           <Menu.Item>
             {({ active }) => (
-              <a
-                className={`${active && "bg-blue-500"}`}
-                href="/create-account"
-              >
+              <a className={`${active && "bg-blue-500"}`} href="/signup">
                 Create Account
               </a>
             )}
