@@ -13,8 +13,30 @@ body {
   background-image: url("https://www.pharmacyquality.com/wp-content/uploads/2020/06/AdobeStock_134066028woodgrain-scaled.jpeg");
 }
 
-/*Products*/
-.product_container {
+h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 10px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 10px;
+}
+
+li {
+  list-style-type: none;
+}
+
+p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 10px;
+}
+
+/* Products .product_container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,4 +86,4 @@ body {
 
   text-align: center;
   margin-bottom: 2rem;
-}
+} */

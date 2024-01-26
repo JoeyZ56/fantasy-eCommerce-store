@@ -23,7 +23,7 @@ const Weapons = () => {
             <h3>{item.name}</h3>
             <img src={item.image_url} alt={item.name} />
             <p>{item.description}</p>
-            <p>{item.price}</p>
+            <p>${item.price}</p>
           </li>
         ))}
       </ul>
