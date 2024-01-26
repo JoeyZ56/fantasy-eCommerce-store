@@ -8,7 +8,7 @@ const LogoutButton = () => {
       const response = await fetch(
         "http://localhost/fantasy-store-api/api/login-logout-signup/logout.php",
         {
-          method: "POST", // or "GET" depending on your server configuration
+          method: "POST",
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
           },

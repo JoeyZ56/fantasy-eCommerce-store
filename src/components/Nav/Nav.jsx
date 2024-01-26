@@ -27,7 +27,14 @@ export default function Navbar() {
           <Menu.Item>
             {({ active }) => (
               <a className={`${active && "bg-blue-500"}`} href="/armor">
-                🛡️ Armor
+                🔰 Armor
+              </a>
+            )}
+          </Menu.Item>
+          <Menu.Item>
+            {({ active }) => (
+              <a className={`${active && "bg-blue-500"}`} href="/shields">
+                🛡️ Shields
               </a>
             )}
           </Menu.Item>
@@ -47,8 +54,8 @@ export default function Navbar() {
           </Menu.Item>
           <Menu.Item>
             {({ active }) => (
-              <a className={`${active && "bg-blue-500"}`} href="/scrolls">
-                📜 Scrolls
+              <a className={`${active && "bg-blue-500"}`} href="/grimoires">
+                📜 Grimoires
               </a>
             )}
           </Menu.Item>

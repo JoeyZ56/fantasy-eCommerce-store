@@ -10,6 +10,9 @@ const Categories = () => {
             <a href="/armor">Armor</a>
           </li>
           <li>
+            <a href="/shields">Shields</a>
+          </li>
+          <li>
             <a href="/weapons">Weapons</a>
           </li>
           <li>

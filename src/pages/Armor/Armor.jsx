@@ -1,24 +1,43 @@
-import PRODUCTS from "../../../config/seed";
+import { useState, useEffect } from "react";
 
 const Armor = () => {
-  const armors = PRODUCTS.Armors;
+  const [armor, setArmor] = useState([]);
+
+  useEffect(() => {
+    const fetchArmor = async () => {
+      try {
+        const response = await fetch(
+          "http://localhost/fantasy-store-api/api/items/armors.php"
+        );
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch armor items");
+        }
+
+        const data = await response.json();
+        setArmor(data);
+      } catch (error) {
+        console.error("Error fetching armor items:", error.message);
+      }
+    };
+
+    fetchArmor();
+  }, []);
 
   return (
-    <>
-      <h1 className="product_title">Armor</h1>
-      <div className="product_container">
-        <ul className="product_item">
-          {armors.map((armor) => (
-            <li key={armor.id} className="product_item-list">
-              <h2>{armor.name}</h2>
-              <img src={armor.image} alt={armor.name} className="product_img" />
-              <p>{armor.description}</p>
-              <p>{armor.price} g</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </>
+    <div>
+      <h2>Armors</h2>
+      <ul>
+        {armor.map((item) => (
+          <li key={item.id}>
+            <h3>{item.name}</h3>
+            <img src={item.image_url} alt={item.name} />
+            <p>{item.description}</p>
+            <p>{item.price}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

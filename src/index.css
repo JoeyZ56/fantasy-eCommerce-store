@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap");
 
 * {
   margin: 0;
@@ -9,7 +9,8 @@
 body {
   font-family: "Caveat", cursive;
 
-  background-color: rgb(154, 144, 144);
+  /* background-color: rgb(154, 144, 144); */
+  background-image: url("https://www.pharmacyquality.com/wp-content/uploads/2020/06/AdobeStock_134066028woodgrain-scaled.jpeg");
 }
 
 /*Products*/

@@ -1,24 +1,24 @@
 import { useState, useEffect } from "react";
 
-const Weapons = () => {
-  const [weapons, setWeapons] = useState([]);
+const Grimoires = () => {
+  const [grimoires, setGrimoires] = useState([]);
 
   useEffect(() => {
-    const fetchWeapons = async () => {
+    const fetchGrimoires = async () => {
       const response = await fetch(
-        "http://localhost/fantasy-store-api/api/items/weapons.php"
+        "http://localhost/fantasy-store-api/api/items/grimoires.php"
       );
       const data = await response.json();
-      setWeapons(data);
+      setGrimoires(data);
     };
-    fetchWeapons();
+    fetchGrimoires();
   }, []);
 
   return (
     <div>
-      <h2>Weapons</h2>
+      <h2>Grimoires</h2>
       <ul>
-        {weapons.map((item) => (
+        {grimoires.map((item) => (
           <li key={item.id}>
             <h3>{item.name}</h3>
             <img src={item.image_url} alt={item.name} />
@@ -31,4 +31,4 @@ const Weapons = () => {
   );
 };
 
-export default Weapons;
+export default Grimoires;

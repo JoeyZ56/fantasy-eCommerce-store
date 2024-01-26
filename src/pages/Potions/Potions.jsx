@@ -1,28 +1,32 @@
-import PRODUCTS from "../../../config/seed";
+import { useEffect, useState } from "react";
 
 const Potions = () => {
-  const Potions = PRODUCTS.Potions;
+  const [potions, setPotions] = useState([]);
 
+  useEffect(() => {
+    const fetchPotions = async () => {
+      const response = await fetch(
+        "http://localhost/fantasy-store-api/api/items/potions.php"
+      );
+      const data = await response.json();
+      setPotions(data);
+    };
+    fetchPotions();
+  }, []);
   return (
-    <>
-      <h1 className="product_title">Armor</h1>
-      <div className="product_container">
-        <ul className="product_item">
-          {Potions.map((potion) => (
-            <li key={potion.id} className="product_item-list">
-              <h2>{potion.name}</h2>
-              <img
-                src={potion.image}
-                alt={potion.name}
-                className="product_img"
-              />
-              <p>{potion.description}</p>
-              <p>{potion.price} g</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </>
+    <div>
+      <h2>Potions</h2>
+      <ul>
+        {potions.map((item) => (
+          <li key={item.id}>
+            <h3>{item.name}</h3>
+            <img src={item.image_url} alt={item.name} />
+            <p>{item.description}</p>
+            <p>{item.price}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 
