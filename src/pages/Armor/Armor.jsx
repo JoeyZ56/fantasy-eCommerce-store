@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import Modal from "../../components/Modal/Modal";
 
-// ... (imports)
-
 const Armor = () => {
   const [armor, setArmor] = useState([]);
   const [showModal, setShowModal] = useState(false);
@@ -71,12 +69,13 @@ const Armor = () => {
             <img
               src={selectedArmor.image_url}
               alt={selectedArmor.name}
-              width={200}
+              width={300}
               height={200}
             />
+            <h3>${selectedArmor.price}</h3>
             <div className="buttons">
-              <button onClick={handleBuyConfirmation}>Yes</button>
-              <button onClick={handleCancelBuy}>No</button>
+              <button onClick={handleBuyConfirmation}>Add To Cart</button>
+              <button onClick={handleCancelBuy}>Take Me back</button>
             </div>
           </div>
         </Modal>
