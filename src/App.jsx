@@ -9,6 +9,9 @@ import Potions from "./pages/Potions/Potions";
 import Grimoires from "./pages/Grimoires/Grimoires";
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
+import Cart from "./components/Cart/Cart";
+
+import CorsTest from "./tests/CorsTest";
 
 const App = () => {
   return (
@@ -23,8 +26,11 @@ const App = () => {
         <Route path="/shields" element={<Shields />} />
         <Route path="/potions" element={<Potions />} />
         <Route path="/grimoires" element={<Grimoires />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+
+        <Route path="/cors-test" element={<CorsTest />} />
       </Routes>
     </BrowserRouter>
   );

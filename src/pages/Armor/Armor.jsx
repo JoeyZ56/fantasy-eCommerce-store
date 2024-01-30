@@ -27,6 +27,32 @@ const Armor = () => {
     fetchArmor();
   }, []);
 
+  const addToCart = async (product_id) => {
+    try {
+      const response = await fetch(
+        `http://localhost/fantasy-store-api/api/cart/shopping-cart.php?product_id=${product_id}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || "Failed to add item to cart");
+      }
+
+      console.log(`Added item with id ${product_id} to the cart`);
+      // You might want to update the UI or take other actions here
+    } catch (error) {
+      console.error("Error adding item to cart:", error.message);
+      // Set a state variable to track the error and display it to the user
+      // setErrorState(error.message);
+    }
+  };
+
   const handleBuyClick = (item) => {
     setSelectedArmor(item);
     setShowModal(true);
@@ -39,6 +65,7 @@ const Armor = () => {
     // Clear the selected armor and close the modal
     setSelectedArmor(null);
     setShowModal(false);
+    addToCart(selectedArmor.id);
   };
 
   const handleCancelBuy = () => {
@@ -57,7 +84,7 @@ const Armor = () => {
             <p>{item.description}</p>
             <p>${item.price}</p>
             <button onClick={() => handleBuyClick(item)}>
-              Buy {item.name}
+              Add {item.name} to Cart
             </button>
           </li>
         ))}
