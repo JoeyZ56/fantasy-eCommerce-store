@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import ErrorBoundary from "../../ErrorBoundary/ErrorBoundary";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -40,4 +42,19 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+function CartErrorBoundary(props) {
+  return (
+    <ErrorBoundary
+      errorComponent={
+        <h2>
+          This listing has an error. <Link to="/">Click here</Link> to go back
+          to the home page.
+        </h2>
+      }
+    >
+      <Cart {...props} />
+    </ErrorBoundary>
+  );
+}
+
+export default CartErrorBoundary;
