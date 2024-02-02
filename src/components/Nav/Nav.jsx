@@ -7,7 +7,7 @@ export default function Navbar() {
     <Menu>
       <div className="menu_container">
         <header>
-          <h1 className="title">Fantasy Store</h1>
+          <h1 className="nav-title">Fantasy Store</h1>
         </header>
         <br />
         <Menu.Button className="menu_btn">

@@ -1,11 +1,7 @@
-/* Nav*/
-.menu_container {
-}
-
 .bar {
   width: 32px;
   height: 3px;
-  background-color: #333;
+  background-color: #373839;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   margin: 6px 0;
   transition: 0.4s;
@@ -30,6 +26,8 @@
   align-items: center;
 }
 
-.title {
-  font-size: 2.5rem;
+.nav-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
 }

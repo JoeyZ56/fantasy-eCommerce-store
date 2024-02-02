@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import Modal from "../../components/Modal/Modal";
+import { Link } from "react-router-dom";
+import ErrorBoundary from "../../ErrorBoundary/ErrorBoundary";
+import "./Armor.scss";
 
 const Armor = () => {
   const [armor, setArmor] = useState([]);
@@ -39,17 +42,31 @@ const Armor = () => {
         }
       );
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || "Failed to add item to cart");
+      const responseText = await response.text();
+
+      try {
+        let responseBody;
+        try {
+          responseBody = JSON.parse(responseText);
+        } catch (parseError) {
+          console.error("Error parsing response JSON:", parseError.message);
+          throw new Error("Invalid JSON response");
+        }
+
+        if (!response.ok) {
+          throw new Error(responseBody.error || "Failed to add item to cart");
+        }
+
+        console.log(`Added item with id ${product_id} to the cart`);
+        console.log("Updated Cart Data:", responseBody);
+      } catch (error) {
+        console.error("Error adding item to cart:", error.message);
       }
 
-      console.log(`Added item with id ${product_id} to the cart`);
       // You might want to update the UI or take other actions here
     } catch (error) {
       console.error("Error adding item to cart:", error.message);
       // Set a state variable to track the error and display it to the user
-      // setErrorState(error.message);
     }
   };
 
@@ -75,14 +92,14 @@ const Armor = () => {
 
   return (
     <div>
-      <h2>Armors</h2>
-      <ul>
+      <h2 className="armor-title">Armors</h2>
+      <ul className="armor-list">
         {armor.map((item) => (
-          <li key={item.id}>
+          <li key={item.id} className="armor-item">
             <h3>{item.name}</h3>
             <img src={item.image_url} alt={item.name} />
             <p>{item.description}</p>
-            <p>${item.price}</p>
+            <p className="armor-item-price">${item.price}</p>
             <button onClick={() => handleBuyClick(item)}>
               Add {item.name} to Cart
             </button>
@@ -111,4 +128,19 @@ const Armor = () => {
   );
 };
 
-export default Armor;
+function ArmorsErrorBoundary(props) {
+  return (
+    <ErrorBoundary
+      errorComponent={
+        <h2>
+          This listing has an error. <Link to="/">Click here</Link> to go back
+          to the home page.
+        </h2>
+      }
+    >
+      <Armor {...props} />
+    </ErrorBoundary>
+  );
+}
+
+export default ArmorsErrorBoundary;
