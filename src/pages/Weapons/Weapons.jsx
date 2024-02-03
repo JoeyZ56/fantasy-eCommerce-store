@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Modal from "../../components/Modal/Modal";
+import "./Weapons.scss";
 
 const Weapons = () => {
   const [weapons, setWeapons] = useState([]);
@@ -46,14 +47,14 @@ const Weapons = () => {
 
   return (
     <div>
-      <h2>Weapons</h2>
-      <ul>
+      <h2 className="weapon-title">Weapons</h2>
+      <ul className="weapon-list">
         {weapons.map((item) => (
-          <li key={item.id}>
+          <li key={item.id} className="weapon-item">
             <h3>{item.name}</h3>
             <img src={item.image_url} alt={item.name} />
             <p>{item.description}</p>
-            <p>${item.price}</p>
+            <p className="weapon-item-price">${item.price}</p>
             <button onClick={() => handleBuyClick(item)}>
               Buy {item.name}
             </button>
@@ -62,18 +63,23 @@ const Weapons = () => {
       </ul>
       {showModal && selectedWeapon && (
         <Modal>
-          <div>
+          <div className="modal-container">
             <h1>Would you like to buy a {selectedWeapon.name}?</h1>
             <img
               src={selectedWeapon.image_url}
               alt={selectedWeapon.name}
               width={300}
               height={200}
+              className="modal-image"
             />
             <h3>${selectedWeapon.price}</h3>
-            <div className="buttons">
-              <button onClick={handleBuyConfirmation}>Add To Cart</button>
-              <button onClick={handleCancelBuy}>Take Me back</button>
+            <div className="modal-btns">
+              <button onClick={handleBuyConfirmation} className="modal-btn">
+                Add To Cart
+              </button>
+              <button onClick={handleCancelBuy} className="modal-btn">
+                Take Me back
+              </button>
             </div>
           </div>
         </Modal>

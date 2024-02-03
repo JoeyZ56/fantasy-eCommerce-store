@@ -6,13 +6,16 @@
   h2 {
     text-align: center;
     margin-bottom: 20px;
+    color: #fff;
+    font-size: 2rem;
   }
 
   .gallery-images {
     display: grid;
     grid-template-columns: repeat(4, 1fr); // Creates four columns
-    grid-gap: 10px; // Adjust the gap between images as needed
+    grid-gap: 10px;
     grid-auto-rows: calc((100vw - 40px) / 4 * 3 / 4);
+
     // Responsive adjustments
     @media (max-width: 1024px) {
       grid-template-columns: repeat(3, 1fr); // Three columns on smaller screens
@@ -36,11 +39,42 @@
     object-fit: cover;
     border-radius: 5px;
     transition: transform 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 
     &:hover {
       transform: scale(1.05);
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     }
+  }
+}
+
+//gallery modal
+.modal-container {
+  h1 {
+    text-align: center;
+    color: #fff;
+  }
+}
+
+.modal-image {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.modal-btn {
+  margin-top: auto;
+  padding: 10px 20px;
+  background-color: #373839;
+  color: white;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken(#353c43, 10%);
+    transition: background-color 0.3s ease-in-out;
   }
 }

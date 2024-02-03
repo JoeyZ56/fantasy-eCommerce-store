@@ -19,7 +19,7 @@ const Categories = () => {
             <a href="/potions">Potions</a>
           </li>
           <li>
-            <a href="/scrolls">Scrolls</a>
+            <a href="/grimoires">Grimoires</a>
           </li>
         </ul>
       </div>

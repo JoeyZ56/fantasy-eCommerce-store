@@ -62,8 +62,6 @@ const Armor = () => {
       } catch (error) {
         console.error("Error adding item to cart:", error.message);
       }
-
-      // You might want to update the UI or take other actions here
     } catch (error) {
       console.error("Error adding item to cart:", error.message);
       // Set a state variable to track the error and display it to the user
@@ -108,18 +106,23 @@ const Armor = () => {
       </ul>
       {showModal && selectedArmor && (
         <Modal>
-          <div>
+          <div className="modal-container">
             <h1>Would you like to buy {selectedArmor.name}?</h1>
             <img
               src={selectedArmor.image_url}
               alt={selectedArmor.name}
               width={300}
               height={200}
+              className="modal-image"
             />
             <h3>${selectedArmor.price}</h3>
-            <div className="buttons">
-              <button onClick={handleBuyConfirmation}>Add To Cart</button>
-              <button onClick={handleCancelBuy}>Take Me back</button>
+            <div className="modal-btns">
+              <button onClick={handleBuyConfirmation} className="modal-btn">
+                Add To Cart
+              </button>
+              <button onClick={handleCancelBuy} className="modal-btn">
+                Take Me back
+              </button>
             </div>
           </div>
         </Modal>

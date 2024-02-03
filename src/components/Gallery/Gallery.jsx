@@ -36,7 +36,7 @@ const Gallery = () => {
 
   return (
     <div className="gallery">
-      <h2>Gallery</h2>
+      <h2 className="gallery-title">Gallery</h2>
       <div className="gallery-images">
         {galleryImage.map((image) => (
           <img
@@ -50,19 +50,21 @@ const Gallery = () => {
       </div>
       {showModal && selectedImage && (
         <Modal>
-          <div>
+          <div className="modal-container">
             <h1>{selectedImage.name}</h1>
             <img
               src={selectedImage.image_url}
               alt={selectedImage.name}
               width={300}
               height={200}
+              className="modal-image"
             />
             <button
               onClick={() => {
                 setShowModal(false);
                 setSelectedImage(null);
               }}
+              className="modal-btn"
             >
               Close
             </button>
