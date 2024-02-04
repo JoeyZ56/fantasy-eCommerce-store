@@ -1,13 +1,15 @@
 import { Menu } from "@headlessui/react";
 import "./Nav.scss";
-import LogoutButton from "../LogoutButton";
+import LogoutButton from "../LogoutButton/LogoutButton";
+import Logo from "../../assets/myssticrealmslogo.png";
 
 export default function Navbar() {
   return (
     <Menu>
       <div className="menu_container">
         <header>
-          <h1 className="nav-title">Fantasy Store</h1>
+          <img src={Logo} alt="Fantasy Store" className="logo" />
+          {/* <h1 className="nav-title">Fantasy Store</h1> */}
         </header>
         <br />
         <Menu.Button className="menu_btn">
@@ -81,7 +83,9 @@ export default function Navbar() {
             )}
           </Menu.Item>
           <Menu.Item>
-            <LogoutButton />
+            <div className="logout-btn-container">
+              <LogoutButton />
+            </div>
           </Menu.Item>
         </Menu.Items>
       </div>

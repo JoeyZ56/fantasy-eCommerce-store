@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./LogoutButton.scss";
 
 const LogoutButton = () => {
   const [logoutMessage, setLogoutMessage] = useState(null);
@@ -28,7 +29,9 @@ const LogoutButton = () => {
 
   return (
     <div>
-      <button onClick={handleLogout}>Logout</button>
+      <span onClick={handleLogout} className="logout-btn">
+        Logout
+      </span>
       {logoutMessage && <p>{logoutMessage}</p>}
     </div>
   );

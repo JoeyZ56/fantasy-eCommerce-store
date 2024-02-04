@@ -31,3 +31,20 @@
   font-weight: 600;
   color: #fff;
 }
+
+.logo {
+  width: 220px;
+  height: 220px;
+  // margin: 0 auto;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.logout-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
