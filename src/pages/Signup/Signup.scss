@@ -2,9 +2,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  h3 {
+    font-size: 3rem;
+    color: #fff;
+  }
 }
 
-.login_container {
+.signup_container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,12 +17,12 @@
   height: 50vh;
   width: 50vw;
 
-  // background-color: #f1f1f1;
+  //   background-color: #f1f1f1;
 
   gap: 1rem;
 }
 
-.login_form {
+.signup_form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,7 +40,7 @@
   margin-bottom: 4rem;
 }
 
-.login-btn {
+.signup-btn {
   width: 100px;
   height: 40px;
   background-color: #333;
@@ -47,11 +52,22 @@
   cursor: pointer;
   transition: 0.4s;
 
-  display: flex;
-  justify-content: center;
-
   &:hover {
     background-color: #555;
+    transition: 0.4s;
+  }
+}
+
+a {
+  margin-top: 2rem;
+  font-size: 2rem;
+
+  color: #fff;
+  cursor: pointer;
+  transition: 0.4s;
+
+  &:hover {
+    color: red;
     transition: 0.4s;
   }
 }

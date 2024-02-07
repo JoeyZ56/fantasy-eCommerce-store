@@ -27,6 +27,7 @@ const Cart = () => {
 
       if (Array.isArray(data) && data.length === 0) {
         setError("Your cart is empty.");
+        <Link href="/">Return to Home Page</Link>;
       }
     } catch (error) {
       console.error("Error fetching cart items:", error);

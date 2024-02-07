@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Login.scss";
 
 const Login = () => {
@@ -57,11 +58,13 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="submit" className="login-btn">
+          <span type="submit" className="login-btn">
             Login
-          </button>
+          </span>
           {formError && <p className="error">{formError}</p>}
         </form>
+
+        <Link to="/signup">Not a User?</Link>
       </div>
     </div>
   );

@@ -6,13 +6,13 @@ import Logo from "../../assets/myssticrealmslogo.png";
 export default function Navbar() {
   return (
     <Menu>
-      <div className="menu_container">
-        <header>
+      <div className="menu-container">
+        <header className="nav-header">
           <img src={Logo} alt="Fantasy Store" className="logo" />
           {/* <h1 className="nav-title">Fantasy Store</h1> */}
         </header>
         <br />
-        <Menu.Button className="menu_btn">
+        <Menu.Button className="menu-btn">
           {" "}
           <div className="bar"></div>
           <div className="bar"></div>
@@ -57,7 +57,14 @@ export default function Navbar() {
           <Menu.Item>
             {({ active }) => (
               <a className={`${active && "bg-blue-500"}`} href="/grimoires">
-                📜 Grimoires
+                📖 Grimoires
+              </a>
+            )}
+          </Menu.Item>
+          <Menu.Item>
+            {({ active }) => (
+              <a className={`${active && "bg-blue-500"}`} href="/wishlist">
+                📜 Wishlist
               </a>
             )}
           </Menu.Item>
