@@ -2,7 +2,7 @@
 .embla {
   overflow: hidden;
 
-  width: 650px;
+  width: 750px;
   height: 550px;
 }
 .embla__container {
@@ -11,7 +11,7 @@
 .embla__slide {
   flex: 0 0 100%;
   min-width: 0;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .container {
   display: flex;

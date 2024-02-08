@@ -12,7 +12,7 @@ const Login = () => {
 
     try {
       const response = await fetch(
-        "http://localhost/fantasy-store-api/api/login-logout-signup/login.php",
+        "http://localhost/fantasy-store-api/api/user/login.php",
         {
           method: "POST",
           headers: {
@@ -25,8 +25,11 @@ const Login = () => {
       );
 
       if (response.ok) {
-        // Login successful, you can redirect or perform other actions
+        const data = await response.json();
         console.log("Login successful");
+        localStorage.setItem("user", JSON.stringify(data.user));
+
+        window.location.href = "/"; // Redirect to home page
       } else {
         const data = await response.text();
         setFormError(data);
@@ -58,9 +61,9 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <span type="submit" className="login-btn">
+          <button type="submit" className="login-btn">
             Login
-          </span>
+          </button>
           {formError && <p className="error">{formError}</p>}
         </form>
 

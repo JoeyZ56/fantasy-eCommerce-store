@@ -1,0 +1,14 @@
+.logout-btn {
+  color: #333;
+
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  transition: 0.4s;
+  margin: 0;
+
+  transition: all 0.3s ease;
+  &:hover {
+    color: rgb(53, 119, 181);
+  }
+}

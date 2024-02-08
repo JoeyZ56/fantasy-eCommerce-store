@@ -31,7 +31,9 @@ const Signup = () => {
           setFormError(errorsString);
         } else {
           //handle successful signup
+          console.log(data);
           setFormError(null);
+          localStorage.setItem("user", data.username); //Store the username
           window.location.href = data.redirect;
         }
       });

@@ -37,6 +37,10 @@
   font-weight: 600;
   padding: 0.5rem 1rem;
   transition: 0.4s;
+  margin: 0;
+  &:hover {
+    color: rgb(53, 119, 181);
+  }
 }
 
 .logo {
@@ -46,9 +50,6 @@
 
 .logout-btn-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  top: 100%;
-  left: 0;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
