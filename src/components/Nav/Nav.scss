@@ -9,19 +9,21 @@
   right: 0;
   margin-right: 1rem;
   margin-top: -6rem;
+  background-color: #f5f5f596;
+  border: none;
 }
 
 .bar {
   width: 32px;
   height: 3px;
-  background-color: #373839;
+  background-color: #111;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   margin: 6px 0;
   transition: 0.4s;
 }
 .menu_items {
   z-index: 1000;
-  background-color: #f5f5f5ee;
+  background-color: #f5f5f596;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   position: absolute;
   top: 15%;

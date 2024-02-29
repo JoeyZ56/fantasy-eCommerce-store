@@ -11,7 +11,7 @@ const Weapons = () => {
     const fetchWeapons = async () => {
       try {
         const response = await fetch(
-          "http://localhost/fantasy-store-api/api/items/weapons.php"
+          "http://localhost/fantasy-store-api/api/items/endpoints/getWeapons.php"
         );
 
         if (!response.ok) {

@@ -11,7 +11,7 @@ const Potions = () => {
     const fetchPotions = async () => {
       try {
         const response = await fetch(
-          "http://localhost/fantasy-store-api/api/items/potions.php"
+          "http://localhost/fantasy-store-api/api/items/endpoints/getPotions.php"
         );
 
         if (!response.ok) {

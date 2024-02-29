@@ -11,7 +11,7 @@ const Shields = () => {
     const fetchShields = async () => {
       try {
         const response = await fetch(
-          "http://localhost/fantasy-store-api/api/items/shields.php"
+          "http://localhost/fantasy-store-api/api/items/endpoints/getShields.php"
         );
 
         if (!response.ok) {

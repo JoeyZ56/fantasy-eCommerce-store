@@ -11,7 +11,7 @@ const Grimoires = () => {
     const fetchGrimoires = async () => {
       try {
         const response = await fetch(
-          "http://localhost/fantasy-store-api/api/items/grimoires.php"
+          "http://localhost/fantasy-store-api/api/items/endpoints/getGrimoires.php"
         );
 
         if (!response.ok) {

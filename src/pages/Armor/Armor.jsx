@@ -13,7 +13,7 @@ const Armor = () => {
     const fetchArmor = async () => {
       try {
         const response = await fetch(
-          "http://localhost/fantasy-store-api/api/items/armors.php"
+          "http://localhost/fantasy-store-api/api/items/endpoints/getArmors.php"
         );
 
         if (!response.ok) {
@@ -30,15 +30,17 @@ const Armor = () => {
     fetchArmor();
   }, []);
 
-  const addToCart = async (product_id) => {
+  const addToCart = async (item_id) => {
     try {
+      console.log(item_id);
       const response = await fetch(
-        `http://localhost/fantasy-store-api/api/cart/shopping-cart.php?product_id=${product_id}`,
+        `http://localhost/fantasy-store-api/api/cart/shopping-cart.php?item_id=${item_id}`,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
+          body: JSON.stringify({ item_id }),
         }
       );
 
@@ -57,7 +59,7 @@ const Armor = () => {
           throw new Error(responseBody.error || "Failed to add item to cart");
         }
 
-        console.log(`Added item with id ${product_id} to the cart`);
+        console.log(`Added item with id ${item_id} to the cart`);
         console.log("Updated Cart Data:", responseBody);
       } catch (error) {
         console.error("Error adding item to cart:", error.message);
@@ -80,7 +82,8 @@ const Armor = () => {
     // Clear the selected armor and close the modal
     setSelectedArmor(null);
     setShowModal(false);
-    addToCart(selectedArmor.id);
+    addToCart(selectedArmor.item_id);
+    console.log(selectedArmor.item_id);
   };
 
   const handleCancelBuy = () => {

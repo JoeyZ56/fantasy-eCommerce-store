@@ -11,7 +11,7 @@ const Gallery = () => {
     const fetchGalleryImage = async () => {
       try {
         const response = await fetch(
-          "http://localhost/fantasy-store-api/api/items/gallery.php"
+          "http://localhost/fantasy-store-api/api/items/endpoints/gallery.php"
         );
 
         if (!response.ok) {
@@ -66,7 +66,7 @@ const Gallery = () => {
               }}
               className="modal-btn"
             >
-              Close
+              𝚇
             </button>
           </div>
         </Modal>
