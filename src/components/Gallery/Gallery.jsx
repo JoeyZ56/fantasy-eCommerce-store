@@ -38,9 +38,9 @@ const Gallery = () => {
     <div className="gallery">
       <h2 className="gallery-title">Gallery</h2>
       <div className="gallery-images">
-        {galleryImage.map((image) => (
+        {galleryImage.map((image, index) => (
           <img
-            key={image.id}
+            key={index}
             src={image.image_url}
             alt={image.name}
             className="gallery-image"

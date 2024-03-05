@@ -49,8 +49,8 @@ const Potions = () => {
     <div>
       <h2 className="potion-title">Potions</h2>
       <ul className="potion-list">
-        {potions.map((item) => (
-          <li key={item.id} className="potion-item">
+        {potions.map((item, index) => (
+          <li key={index} className="potion-item">
             <h3>{item.name}</h3>
             <img src={item.image_url} alt={item.name} />
             <p>{item.description}</p>

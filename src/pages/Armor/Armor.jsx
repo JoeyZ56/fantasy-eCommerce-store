@@ -77,7 +77,7 @@ const Armor = () => {
 
   const handleBuyConfirmation = () => {
     // Implement logic for buying the selected armor
-    // You might want to make an API call, update the state, etc.
+    // You might want to make an API call, update the state
     console.log(`Buying ${selectedArmor.name}`);
     // Clear the selected armor and close the modal
     setSelectedArmor(null);
@@ -95,8 +95,8 @@ const Armor = () => {
     <div>
       <h2 className="armor-title">Armors</h2>
       <ul className="armor-list">
-        {armor.map((item) => (
-          <li key={item.id} className="armor-item">
+        {armor.map((item, index) => (
+          <li key={index} className="armor-item">
             <h3>{item.name}</h3>
             <img src={item.image_url} alt={item.name} />
             <p>{item.description}</p>

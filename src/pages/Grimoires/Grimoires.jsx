@@ -49,8 +49,8 @@ const Grimoires = () => {
     <div>
       <h2 className="grimoire-title">Grimoires</h2>
       <ul className="grimoire-list">
-        {grimoires.map((item) => (
-          <li key={item.id} className="grimoire-item">
+        {grimoires.map((item, index) => (
+          <li key={index} className="grimoire-item">
             <h3>{item.name}</h3>
             <img src={item.image_url} alt={item.name} />
             <p>{item.description}</p>

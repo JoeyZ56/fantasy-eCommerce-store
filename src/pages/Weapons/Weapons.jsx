@@ -49,8 +49,8 @@ const Weapons = () => {
     <div>
       <h2 className="weapon-title">Weapons</h2>
       <ul className="weapon-list">
-        {weapons.map((item) => (
-          <li key={item.id} className="weapon-item">
+        {weapons.map((item, index) => (
+          <li key={index} className="weapon-item">
             <h3>{item.name}</h3>
             <img src={item.image_url} alt={item.name} />
             <p>{item.description}</p>

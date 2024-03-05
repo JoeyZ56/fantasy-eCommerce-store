@@ -49,8 +49,8 @@ const Shields = () => {
     <div>
       <h2 className="shield-title">Shields</h2>
       <ul className="shield-list">
-        {shields.map((item) => (
-          <li key={item.id} className="shield-item">
+        {shields.map((item, index) => (
+          <li key={index} className="shield-item">
             <h3>{item.name}</h3>
             <img src={item.image_url} alt={item.name} />
             <p>{item.description}</p>
