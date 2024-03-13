@@ -1,0 +1,29 @@
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+h2 {
+  font-size: 2rem;
+}
+
+.link-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.link:hover {
+  color: rgb(53, 119, 181);
+  transform: scale(1.05);
+}
+
+.empty-cart {
+  font-size: 2.5rem;
+  font-weight: 600;
+
+  margin-top: 1.5rem;
+}
