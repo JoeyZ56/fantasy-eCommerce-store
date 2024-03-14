@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ErrorBoundary from "../../ErrorBoundary/ErrorBoundary";
-import "./Cart.css";
+import "./Cart.scss";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -14,22 +14,20 @@ const Cart = () => {
       const res = await fetch(
         "http://localhost/fantasy-store-api/api/cart/endpoints/getCartContent.php"
       );
-
       if (!res.ok) throw new Error("Failed to fetch cart items");
 
-      const { item, cartContents } = await res.json(); // Destructure the response
-      console.log("Cart items:", item, cartContents);
+      const response = await res.json(); // Get the full response
+      console.log("Response from getCartContent.php:", response);
 
-      // Assuming cartContents or item would hold the actual cart items array when not empty
-      // Adjust logic based on your actual data structure and what you expect
-      if (cartContents && Array.isArray(cartContents)) {
-        // If cartContents is the array
-        setCartItems(cartContents);
-      } else if (item && Array.isArray(item)) {
-        // Or if item holds the array
-        setCartItems(item);
+      // Check for 'cartContents' in the response
+      if (response.cartContents && Array.isArray(response.cartContents)) {
+        setCartItems(response.cartContents);
+      } else if (response.error) {
+        // Handle error response (e.g., empty cart)
+        setError(response.error);
+        setCartItems([]); // Ensure cartItems is an empty array if there's an error
       } else {
-        throw new Error("Data is not an array");
+        throw new Error("Unexpected response format");
       }
     } catch (error) {
       console.error("Error fetching cart items:", error);

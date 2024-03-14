@@ -11,7 +11,7 @@ const Gallery = () => {
     const fetchGalleryImage = async () => {
       try {
         const response = await fetch(
-          "http://localhost/fantasy-store-api/api/items/endpoints/gallery.php"
+          "http://localhost/fantasy-store-api/api/items/galleryEndpoint/gallery.php"
         );
 
         if (!response.ok) {
