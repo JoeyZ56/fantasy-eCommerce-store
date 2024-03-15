@@ -34,7 +34,7 @@ const Armor = () => {
     try {
       console.log(item_id);
       const response = await fetch(
-        `http://localhost/fantasy-store-api/api/cart/shopping-cart.php?item_id=${item_id}`,
+        `http://localhost/fantasy-store-api/api/cart/endpoints/shopping-cart.php?item_id=${item_id}`,
         {
           method: "POST",
           headers: {
