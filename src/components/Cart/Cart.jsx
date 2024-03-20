@@ -12,7 +12,10 @@ const Cart = () => {
     setLoading(true);
     try {
       const res = await fetch(
-        "http://localhost/fantasy-store-api/api/cart/endpoints/getCartContent.php"
+        "http://localhost/fantasy-store-api/api/cart/endpoints/getCartContent.php",
+        {
+          credentials: "include", // Include credentials to ensure cookies are sent with the request
+        }
       );
       if (!res.ok) throw new Error("Failed to fetch cart items");
 
