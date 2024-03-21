@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Modal from "../../components/Modal/Modal";
 import "./Weapons.scss";
+import addToCart from "../../api/addToCart/addToCart";
 
 const Weapons = () => {
   const [weapons, setWeapons] = useState([]);
@@ -37,6 +38,7 @@ const Weapons = () => {
     console.log(`Buying ${selectedWeapon.name}`);
     // Clear the selected armor and close the modal
     setSelectedWeapon(null);
+    addToCart(selectedWeapon.item_id);
     setShowModal(false);
   };
 

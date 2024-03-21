@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Modal from "../../components/Modal/Modal";
 import "./Shields.scss";
+import addToCart from "../../api/addToCart/addToCart";
 
 const Shields = () => {
   const [shields, setShields] = useState([]);
@@ -37,6 +38,7 @@ const Shields = () => {
     console.log(`Buying ${selectedShield.name}`);
     // Clear the selected armor and close the modal
     setSelectedShield(null);
+    addToCart(selectedShield.item_id);
     setShowModal(false);
   };
 

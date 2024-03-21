@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Modal from "../../components/Modal/Modal";
 import "./Potions.scss";
+import addToCart from "../../api/addToCart/addToCart";
 
 const Potions = () => {
   const [potions, setPotions] = useState([]);
@@ -37,6 +38,7 @@ const Potions = () => {
     console.log(`Buying ${selectedPotion.name}`);
     // Clear the selected armor and close the modal
     setSelectedPotion(null);
+    addToCart(selectedPotion.item_id);
     setShowModal(false);
   };
 

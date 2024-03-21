@@ -1,3 +1,5 @@
+import "./UserProfile.scss";
+
 const UserProfile = () => {
   const username = localStorage.getItem("user"); //retieve the username from local storage
 
@@ -5,7 +7,7 @@ const UserProfile = () => {
 
   return (
     <div>
-      <h3>Welcome, {username}</h3>
+      <h3 className="welcome">Welcome, {username}</h3>
     </div>
   );
 };

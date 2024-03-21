@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Modal from "../../components/Modal/Modal";
 import "./Grimoires.scss";
+import addToCart from "../../api/addToCart/addToCart";
 
 const Grimoires = () => {
   const [grimoires, setGrimoires] = useState([]);
@@ -37,6 +38,7 @@ const Grimoires = () => {
     console.log(`Buying ${selectedGrimoire.name}`);
     // Clear the selected armor and close the modal
     setSelectedGrimoire(null);
+    addToCart(selectedGrimoire.item_id);
     setShowModal(false);
   };
 

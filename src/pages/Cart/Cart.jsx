@@ -14,7 +14,12 @@ const Cart = () => {
       const res = await fetch(
         "http://localhost/fantasy-store-api/api/cart/endpoints/getCartContent.php",
         {
-          credentials: "include", // Include credentials to ensure cookies are sent with the request
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+
+          credentials: "include", // crucial for sessions
         }
       );
       if (!res.ok) throw new Error("Failed to fetch cart items");
@@ -36,6 +41,7 @@ const Cart = () => {
       console.error("Error fetching cart items:", error);
       setError(`Failed to fetch cart items. ${error.message}`);
       setCartItems([]); // Ensure cartItems is always an array, even on error
+      console.log(cartItems);
     } finally {
       setLoading(false);
     }
