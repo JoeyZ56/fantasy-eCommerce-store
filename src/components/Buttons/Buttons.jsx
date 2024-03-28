@@ -1,23 +1,17 @@
+import { Link } from "react-router-dom";
 import "./Buttons.scss";
 
 const Buttons = () => {
-  const handleReturnHome = () => {
-    window.location.href = "/";
-  };
-
-  const handleCartPage = () => {
-    window.location.href = "/cart";
-  };
-
   return (
-    <div>
-      <div className="buttons-container">
-        <button onClick={handleReturnHome} className="buttons">
+    <div className="container">
+      <div className="link-container">
+        <Link to="/" className="links">
           Return Home
-        </button>
-        <button onClick={handleCartPage} className="buttons">
+        </Link>
+
+        <Link to="/cart" className="links">
           Go to Cart
-        </button>
+        </Link>
       </div>
     </div>
   );

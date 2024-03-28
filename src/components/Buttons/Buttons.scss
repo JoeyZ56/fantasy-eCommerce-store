@@ -1,12 +1,13 @@
-.buttons-container {
+.container {
   display: flex;
   justify-content: center;
-
-  margin-top: 20px;
-  margin-bottom: 20px;
+  align-items: center;
 }
 
-.buttons {
+.link-container {
+}
+
+.links {
   width: 140px;
   height: 50px;
   margin: 0 10px;

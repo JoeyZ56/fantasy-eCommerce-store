@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Categories.scss";
 
 const Categories = () => {
@@ -7,19 +8,19 @@ const Categories = () => {
       <div className="cat_list-container">
         <ul className="cat_ul">
           <li>
-            <a href="/armor">Armor</a>
+            <Link to="/armor">Armor</Link>
           </li>
           <li>
-            <a href="/shields">Shields</a>
+            <Link to="/shields">Shields</Link>
           </li>
           <li>
-            <a href="/weapons">Weapons</a>
+            <Link to="/weapons">Weapons</Link>
           </li>
           <li>
-            <a href="/potions">Potions</a>
+            <Link to="/potions">Potions</Link>
           </li>
           <li>
-            <a href="/grimoires">Grimoires</a>
+            <Link to="/grimoires">Grimoires</Link>
           </li>
         </ul>
       </div>

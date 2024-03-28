@@ -1,4 +1,5 @@
 import { Menu } from "@headlessui/react";
+import { Link } from "react-router-dom";
 import "./Nav.scss";
 import Logout from "../Logout/Logout";
 import Logo from "../../assets/myssticrealmslogo.png";
@@ -22,72 +23,72 @@ export default function Navbar() {
         <Menu.Items className="menu_items">
           <Menu.Item>
             {({ active }) => (
-              <a className={`${active && "bg-blue-500"}`} href="/">
+              <Link className={`${active && "bg-blue-500"}`} to="/">
                 🏰 Home
-              </a>
+              </Link>
             )}
           </Menu.Item>
           <Menu.Item>
             {({ active }) => (
-              <a className={`${active && "bg-blue-500"}`} href="/armor">
+              <Link className={`${active && "bg-blue-500"}`} to="/armor">
                 🔰 Armor
-              </a>
+              </Link>
             )}
           </Menu.Item>
           <Menu.Item>
             {({ active }) => (
-              <a className={`${active && "bg-blue-500"}`} href="/shields">
+              <Link className={`${active && "bg-blue-500"}`} to="/shields">
                 🛡️ Shields
-              </a>
+              </Link>
             )}
           </Menu.Item>
           <Menu.Item>
             {({ active }) => (
-              <a className={`${active && "bg-blue-500"}`} href="/weapons">
+              <Link className={`${active && "bg-blue-500"}`} to="/weapons">
                 ⚔️ Weapons
-              </a>
+              </Link>
             )}
           </Menu.Item>
           <Menu.Item>
             {({ active }) => (
-              <a className={`${active && "bg-blue-500"}`} href="/potions">
+              <Link className={`${active && "bg-blue-500"}`} to="/potions">
                 🧪 Potions
-              </a>
+              </Link>
             )}
           </Menu.Item>
           <Menu.Item>
             {({ active }) => (
-              <a className={`${active && "bg-blue-500"}`} href="/grimoires">
+              <Link className={`${active && "bg-blue-500"}`} to="/grimoires">
                 📖 Grimoires
-              </a>
+              </Link>
             )}
           </Menu.Item>
           <Menu.Item>
             {({ active }) => (
-              <a className={`${active && "bg-blue-500"}`} href="/wishlist">
+              <Link className={`${active && "bg-blue-500"}`} to="/wishlist">
                 📜 Wishlist
-              </a>
+              </Link>
             )}
           </Menu.Item>
           <Menu.Item>
             {({ active }) => (
-              <a className={`${active && "bg-blue-500"}`} href="/cart">
+              <Link className={`${active && "bg-blue-500"}`} to="/cart">
                 🛒 Cart
-              </a>
+              </Link>
             )}
           </Menu.Item>
           <Menu.Item>
             {({ active }) => (
-              <a className={`${active && "bg-blue-500"}`} href="/signup">
+              <Link className={`${active && "bg-blue-500"}`} to="/signup">
                 Create Account
-              </a>
+              </Link>
             )}
           </Menu.Item>
           <Menu.Item>
             {({ active }) => (
-              <a className={`${active && "bg-blue-500"}`} href="/login">
+              <Link className={`${active && "bg-blue-500"}`} to="/login">
                 Login
-              </a>
+              </Link>
             )}
           </Menu.Item>
           <Menu.Item>
