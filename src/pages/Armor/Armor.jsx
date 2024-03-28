@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import ErrorBoundary from "../../ErrorBoundary/ErrorBoundary";
 import "./Armor.scss";
 import addToCart from "../../api/addToCart/addToCart";
+import Buttons from "../../components/Buttons/Buttons";
 
 const Armor = () => {
   const [armor, setArmor] = useState([]);
@@ -98,6 +99,9 @@ const Armor = () => {
           </div>
         </Modal>
       )}
+      <div>
+        <Buttons />
+      </div>
     </div>
   );
 };

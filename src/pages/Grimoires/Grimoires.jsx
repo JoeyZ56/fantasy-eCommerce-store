@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Modal from "../../components/Modal/Modal";
 import "./Grimoires.scss";
 import addToCart from "../../api/addToCart/addToCart";
+import Buttons from "../../components/Buttons/Buttons";
 
 const Grimoires = () => {
   const [grimoires, setGrimoires] = useState([]);
@@ -86,6 +87,9 @@ const Grimoires = () => {
           </div>
         </Modal>
       )}
+      <div>
+        <Buttons />
+      </div>
     </div>
   );
 };

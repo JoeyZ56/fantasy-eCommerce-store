@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Modal from "../../components/Modal/Modal";
 import "./Weapons.scss";
 import addToCart from "../../api/addToCart/addToCart";
+import Buttons from "../../components/Buttons/Buttons";
 
 const Weapons = () => {
   const [weapons, setWeapons] = useState([]);
@@ -86,6 +87,9 @@ const Weapons = () => {
           </div>
         </Modal>
       )}
+      <div>
+        <Buttons />
+      </div>
     </div>
   );
 };

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Modal from "../../components/Modal/Modal";
 import "./Potions.scss";
 import addToCart from "../../api/addToCart/addToCart";
+import Buttons from "../../components/Buttons/Buttons";
 
 const Potions = () => {
   const [potions, setPotions] = useState([]);
@@ -86,6 +87,9 @@ const Potions = () => {
           </div>
         </Modal>
       )}
+      <div>
+        <Buttons />
+      </div>
     </div>
   );
 };
