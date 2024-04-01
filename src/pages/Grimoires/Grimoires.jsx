@@ -33,13 +33,17 @@ const Grimoires = () => {
     setShowModal(true);
   };
 
-  const handleBuyConfirmation = () => {
-    // Implement logic for buying the selected armor
-    // You might want to make an API call, update the state, etc.
-    console.log(`Buying ${selectedGrimoire.name}`);
-    // Clear the selected armor and close the modal
+  const handleBuyConfirmation = async () => {
+    console.log(`Adding ${selectedGrimoire.name} to cart.`);
+
+    try {
+      await addToCart(selectedGrimoire.item_id);
+      console.log(`Successfully added ${selectedGrimoire.name} to the cart.`);
+    } catch (error) {
+      console.error(`Error adding ${selectedGrimoire.name} to cart:`, error);
+    }
+
     setSelectedGrimoire(null);
-    addToCart(selectedGrimoire.item_id);
     setShowModal(false);
   };
 

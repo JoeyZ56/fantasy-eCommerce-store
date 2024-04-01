@@ -8,33 +8,24 @@ const addToCart = async (item_id) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ item_id }),
+        credentials: "include",
       }
     );
 
-    const responseText = await response.text();
+    const responseBody = await response.json();
 
-    try {
-      let responseBody;
-      try {
-        responseBody = JSON.parse(responseText);
-      } catch (parseError) {
-        console.error("Error parsing response JSON:", parseError.message);
-        throw new Error("Invalid JSON response");
-      }
-
-      if (!response.ok) {
-        throw new Error(responseBody.error || "Failed to add item to cart");
-      }
-
-      console.log(`Added item with id ${item_id} to the cart`);
-      console.log("Updated Cart Data:", responseBody);
-    } catch (error) {
-      console.error("Error adding item to cart:", error.message);
+    if (!response.ok) {
+      throw new Error(responseBody.error || "Failed to add item to cart");
     }
+
+    console.log(
+      `Added item with id ${item_id} to the cart`,
+      "Updated Cart Data:",
+      responseBody
+    );
   } catch (error) {
     console.error("Error adding item to cart:", error.message);
-    // Set a state variable to track the error and display it to the user
+    // Optionally, throw the error or set a state variable to inform the user
   }
 };
 

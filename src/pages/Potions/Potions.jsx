@@ -8,6 +8,7 @@ const Potions = () => {
   const [potions, setPotions] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedPotion, setSelectedPotion] = useState(null);
+  const [selectedQuantity, setSelectedQuantity] = useState(1);
 
   useEffect(() => {
     const fetchPotions = async () => {
@@ -33,13 +34,33 @@ const Potions = () => {
     setShowModal(true);
   };
 
-  const handleBuyConfirmation = () => {
-    // Implement logic for buying the selected armor
-    // You might want to make an API call, update the state, etc.
-    console.log(`Buying ${selectedPotion.name}`);
-    // Clear the selected armor and close the modal
+  const handleBuyConfirmation = async () => {
+    console.log(`Adding ${selectedPotion.name} to cart.`);
+
+    try {
+      await addToCart(selectedPotion.item_id);
+      console.log(`Successfully added ${selectedPotion.name} to the cart.`);
+    } catch (error) {
+      console.error(`Error adding ${selectedPotion.name} to cart:`, error);
+    }
+
     setSelectedPotion(null);
-    addToCart(selectedPotion.item_id);
+    setShowModal(false);
+  };
+
+  const handleQuanity = async () => {
+    console.log(`Adding ${selectedPotion.name} to cart.`);
+
+    try {
+      await addToCart(selectedPotion.item_id, selectedQuantity);
+      console.log(
+        `Successfully added ${selectedQuantity} of ${selectedPotion.name} to the cart.`
+      );
+    } catch (error) {
+      console.error(`Error adding ${selectedPotion.name} to cart:`, error);
+    }
+
+    setSelectedPotion(null);
     setShowModal(false);
   };
 
@@ -80,6 +101,17 @@ const Potions = () => {
               <button onClick={handleBuyConfirmation} className="modal-btn">
                 Add To Cart
               </button>
+              <select
+                value={handleQuanity}
+                onChange={(e) => setSelectedQuantity(Number(e.target.value))}
+              >
+                {[1, 2, 3, 4, 5].map((qty) => (
+                  <option key={qty} value={qty}>
+                    {qty}
+                  </option>
+                ))}
+              </select>
+
               <button onClick={handleCancelBuy} className="modal-btn">
                 Take Me back
               </button>

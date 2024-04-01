@@ -33,13 +33,17 @@ const Weapons = () => {
     setShowModal(true);
   };
 
-  const handleBuyConfirmation = () => {
-    // Implement logic for buying the selected armor
-    // You might want to make an API call, update the state, etc.
-    console.log(`Buying ${selectedWeapon.name}`);
-    // Clear the selected armor and close the modal
+  const handleBuyConfirmation = async () => {
+    console.log(`Adding ${selectedWeapon.name} to cart.`);
+
+    try {
+      await addToCart(selectedWeapon.item_id);
+      console.log(`Successfully added ${selectedWeapon.name} to the cart.`);
+    } catch (error) {
+      console.error(`Error adding ${selectedWeapon.name} to cart:`, error);
+    }
+
     setSelectedWeapon(null);
-    addToCart(selectedWeapon.item_id);
     setShowModal(false);
   };
 

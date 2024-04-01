@@ -5,8 +5,51 @@
   align-items: center;
   margin-top: 2rem;
 
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    display: flex;
+    gap: 1rem;
+  }
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem 0;
+    padding: 1rem;
+    // border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
   h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    color: white;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  p {
+    font-size: 1rem;
+    color: white;
+  }
+
+  img {
+    width: 100%;
+    max-width: 300px;
+    margin: 1rem 0;
   }
 }
 
