@@ -3,35 +3,6 @@ import { Link } from "react-router-dom";
 import ErrorBoundary from "../../ErrorBoundary/ErrorBoundary";
 import "./Cart.scss";
 
-const removeFromCart = async (item_id) => {
-  try {
-    const response = await fetch(
-      `http://localhost/fantasy-store-api/api/cart/endpoints/shopping-cart.php?item_id=${item_id}`,
-      {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-      }
-    );
-
-    const responseBody = await response.json();
-
-    if (!response.ok) {
-      throw new Error(responseBody.error || "Failed to delete item from cart");
-    }
-
-    console.log(
-      `Deleted item with id ${item_id} from the cart`,
-      "Updated Cart Data:",
-      responseBody
-    );
-  } catch (error) {
-    console.error("Error deleting item from cart:", error.message);
-  }
-};
-
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -74,6 +45,35 @@ const Cart = () => {
     } finally {
       setLoading(false);
     }
+    console.log("Cart items after fetch:", cartItems);
+  };
+
+  const removeFromCart = async (item_id) => {
+    try {
+      const response = await fetch(
+        `http://localhost/fantasy-store-api/api/cart/endpoints/shopping-cart.php?item_id=${item_id}`,
+        {
+          method: "DELETE",
+          credentials: "include",
+        }
+      );
+
+      const responseBody = await response.json();
+
+      if (!response.ok) {
+        throw new Error(
+          responseBody.error || "Failed to delete item from cart"
+        );
+      }
+
+      console.log(
+        `Deleted item with id ${item_id} from the cart`,
+        "Updated Cart Data:",
+        responseBody
+      );
+    } catch (error) {
+      console.error("Error deleting item from cart:", error.message);
+    }
   };
 
   useEffect(() => {
@@ -101,15 +101,18 @@ const Cart = () => {
                 <p>${item.price}</p>
                 <p>Quantity: {item.quantity}</p>
                 <button
-                  onClick={() => removeFromCart(item.id)}
+                  onClick={() => {
+                    console.log(`Removing item with id: ${item.id}`);
+                    removeFromCart(item.id);
+                  }}
                   className="delete-button"
                 >
-                  X
+                  Remove from Cart
                 </button>
               </li>
             ))}
           </ul>
-          <h3>Total Price: ${totalPrice.toFixed(2)}</h3>
+          <h4>Total Price: ${totalPrice.toFixed(2)}</h4>
         </div>
       ) : (
         <div className="link-container">

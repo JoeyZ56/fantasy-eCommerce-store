@@ -25,7 +25,6 @@ const addToCart = async (item_id) => {
     );
   } catch (error) {
     console.error("Error adding item to cart:", error.message);
-    // Optionally, throw the error or set a state variable to inform the user
   }
 };
 

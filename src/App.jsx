@@ -10,6 +10,7 @@ import Grimoires from "./pages/Grimoires/Grimoires";
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 import Cart from "./pages/Cart/Cart";
+import Wishlist from "./pages/Wishlist/Wishlist";
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/wishlist" element={<Wishlist />} />
       </Routes>
     </BrowserRouter>
   );
