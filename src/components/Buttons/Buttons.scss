@@ -1,3 +1,4 @@
+// Base container styles
 .container {
   display: flex;
   justify-content: center;
@@ -5,21 +6,71 @@
 }
 
 .link-container {
+  display: flex;
+  flex-direction: row !important;
+  gap: 200px !important;
+  align-items: center;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .links {
-  width: 140px;
-  height: 50px;
-  margin: 0 10px;
-
-  top: 10px;
-  right: 10px;
-
-  font-size: 20px;
+  color: #007bff;
+  background-color: #373839;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 10px 0;
+  padding: 10px 20px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
 
   &:hover {
-    cursor: pointer;
-    background-color: rgb(53, 119, 181);
-    transform: scale(1.05);
+    background-color: #007bff;
+    color: #fff;
+    border-color: #0056b3;
+    transition: 0.4s;
+    scale: 1.1;
+  }
+}
+
+// Responsive Media Queries
+@media (max-width: 1024px) {
+  .link-container {
+    width: auto; // Adjust width based on parent container
+  }
+
+  .links {
+    font-size: 1rem; // Smaller font size on smaller screens
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    height: auto; // Make container auto-height on smaller devices
+  }
+
+  .link-container {
+    flex-direction: column !important; // Side-by-side links on tablets
+    padding: 10px;
+    gap: 0 !important;
+  }
+
+  .links {
+    font-size: 0.9rem; // Even smaller font size for mobile devices
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .link-container {
+    flex-direction: column; // Stack links again on very small screens
+    gap: 0 !important;
+  }
+
+  .links {
+    font-size: 0.8rem; // Smallest font size for mobile phones
   }
 }

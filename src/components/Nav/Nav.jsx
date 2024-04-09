@@ -11,7 +11,9 @@ export default function Navbar() {
       <div className="menu-container">
         <header className="nav-header">
           <img src={Logo} alt="Fantasy Store" className="logo" />
-          <UserProfile />
+          <div className="user-welcome">
+            <UserProfile />
+          </div>
         </header>
         <br />
         <Menu.Button className="menu-btn">

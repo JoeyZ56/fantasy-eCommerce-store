@@ -71,3 +71,68 @@ a {
     transition: 0.4s;
   }
 }
+
+@media (max-width: 1024px) {
+  .signup_container {
+    width: 70vw; // Increase the width for better usability on smaller laptops
+    height: 60vh; // Slightly increase the height
+  }
+
+  .signup_form input {
+    width: 400px; // Reduce the input width to better fit the screen
+  }
+
+  .main-container h3 {
+    font-size: 2.5rem; // Slightly reduce the font size
+  }
+}
+
+@media (max-width: 768px) {
+  .signup_container {
+    width: 80vw; // Further increase the width for tablets
+    height: 70vh; // Adjust the height to maintain form usability
+  }
+
+  .signup_form {
+    gap: 0.8rem; // Reduce the gap between form elements
+  }
+
+  .signup_form input {
+    width: 300px; // Further reduce the input width
+    height: 45px; // Slightly reduce the input height
+  }
+
+  .signup-btn {
+    width: 80%;
+    height: 30%;
+  }
+
+  a {
+    font-size: 1.5rem; // Reduce the font size of the link
+  }
+}
+
+@media (max-width: 480px) {
+  .signup_container {
+    width: 95vw; // Use almost the full width of very small screens
+    height: 80vh; // Increase the height to accommodate stacked elements
+  }
+
+  .signup_form input {
+    width: 90%; // Make the input width responsive to the screen width
+    height: 40px; // Minimize the input height to save space
+  }
+
+  .signup-btn {
+    width: 80%;
+    height: 30%;
+  }
+
+  .main-container h3 {
+    font-size: 2rem; // Reduce the font size significantly for small devices
+  }
+
+  a {
+    font-size: 1.2rem; // Further reduce the font size for readability on small devices
+  }
+}

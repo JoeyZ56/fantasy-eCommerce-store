@@ -12,4 +12,5 @@ body {
   font-family: "Caveat", cursive;
   background-image: url("./assets/fantasybackground.webp");
   object-fit: cover;
+  color: white;
 }

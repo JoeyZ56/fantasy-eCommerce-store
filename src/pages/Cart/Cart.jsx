@@ -18,21 +18,18 @@ const Cart = () => {
           headers: {
             "Content-Type": "application/json",
           },
-
-          credentials: "include", // crucial for sessions
+          credentials: "include",
         }
       );
       if (!res.ok) throw new Error("Failed to fetch cart items");
 
-      const response = await res.json(); // Get the full response
-      console.log("Response from getCartContent.php:", response);
+      const data = await res.json();
+      console.log("Fetched cart items:", data.cartContents); // Log the cart contents
 
-      // Check for 'cartContents' in the response
-      if (response.cartContents && Array.isArray(response.cartContents)) {
-        setCartItems(response.cartContents);
-      } else if (response.error) {
-        // Handle error response
-        setError(response.error);
+      if (data.cartContents && Array.isArray(data.cartContents)) {
+        setCartItems(data.cartContents);
+      } else if (data.error) {
+        setError(data.error);
         setCartItems([]);
       } else {
         throw new Error("Unexpected response format");
@@ -41,17 +38,15 @@ const Cart = () => {
       console.error("Error fetching cart items:", error);
       setError(`Failed to fetch cart items. ${error.message}`);
       setCartItems([]);
-      console.log(cartItems);
     } finally {
       setLoading(false);
     }
-    console.log("Cart items after fetch:", cartItems);
   };
 
   const removeFromCart = async (item_id) => {
     try {
       const response = await fetch(
-        `http://localhost/fantasy-store-api/api/cart/endpoints/shopping-cart.php?item_id=${item_id}`,
+        `http://localhost/fantasy-store-api/api/cart/endpoints/removeFromCart.php?item_id=${item_id}`,
         {
           method: "DELETE",
           credentials: "include",

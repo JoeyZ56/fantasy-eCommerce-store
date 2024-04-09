@@ -47,3 +47,24 @@
 .buttons {
   margin-top: 20px;
 }
+
+@media (max-width: 1024px) {
+  .modal-container {
+    width: 80%; /* Larger relative width on smaller screens */
+    padding: 15px; /* Slightly reduced padding */
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-container {
+    width: 90%; /* Even larger relative width for tablets and small laptops */
+    padding: 10px; /* Further reduced padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-container {
+    width: 95%; /* Nearly full-width on mobile devices */
+    padding: 5px; /* Minimal padding to maximize space */
+  }
+}

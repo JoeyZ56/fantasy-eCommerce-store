@@ -105,3 +105,15 @@
     transition: background-color 0.3s ease-in-out;
   }
 }
+
+@media (max-width: 768px) {
+  .grimoire-list .grimoire-item {
+    width: calc(50% - 20px); // Two items per row on tablets
+  }
+}
+
+@media (max-width: 480px) {
+  .grimoire-list .grimoire-item {
+    width: 100%; // Single column layout on mobiles
+  }
+}

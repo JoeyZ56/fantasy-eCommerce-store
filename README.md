@@ -72,4 +72,12 @@
 
 ### Regularly review your code and database for security vulnerabilities. Consider using tools or services to audit your site's security.
 
+# Known issues:
+
+### localstoage forgetting username after an exctened period.
+
+### Deleteing items from the users cart
+
+### wishlist...everything about it!
+
 <div>
