@@ -35,7 +35,7 @@ const Gallery = () => {
   };
 
   return (
-    <div className="gallery">
+    <div className="gallery-container">
       <h2 className="gallery-title">Gallery</h2>
       <div className="gallery-images">
         {galleryImage.map((image, index) => (

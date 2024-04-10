@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import ErrorBoundary from "../../ErrorBoundary/ErrorBoundary";
 import "./Cart.scss";
 
 const Cart = () => {
@@ -24,7 +23,7 @@ const Cart = () => {
       if (!res.ok) throw new Error("Failed to fetch cart items");
 
       const data = await res.json();
-      console.log("Fetched cart items:", data.cartContents); // Log the cart contents
+      console.log("Fetched cart items:", data.cartContents);
 
       if (data.cartContents && Array.isArray(data.cartContents)) {
         setCartItems(data.cartContents);
@@ -44,6 +43,15 @@ const Cart = () => {
   };
 
   const removeFromCart = async (item_id) => {
+    console.log(
+      "Attempting to remove item from cart using button click with the id:",
+      item_id
+    );
+
+    if (!item_id) {
+      console.error("No item id provided to remove from cart");
+      return;
+    }
     try {
       const response = await fetch(
         `http://localhost/fantasy-store-api/api/cart/endpoints/removeFromCart.php?item_id=${item_id}`,
@@ -61,10 +69,9 @@ const Cart = () => {
         );
       }
 
-      console.log(
-        `Deleted item with id ${item_id} from the cart`,
-        "Updated Cart Data:",
-        responseBody
+      // Update the cart items state to reflect the removal
+      setCartItems((currentItems) =>
+        currentItems.filter((item) => item.item_id !== item_id)
       );
     } catch (error) {
       console.error("Error deleting item from cart:", error.message);
@@ -90,15 +97,15 @@ const Cart = () => {
         <div className="cart-info">
           <ul>
             {cartItems.map((item) => (
-              <li key={item.id}>
+              <li key={item.item_id}>
                 <h3>{item.name}</h3>
                 <img src={item.image_url} alt={item.name} />
                 <p>${item.price}</p>
                 <p>Quantity: {item.quantity}</p>
                 <button
                   onClick={() => {
-                    console.log(`Removing item with id: ${item.id}`);
-                    removeFromCart(item.id);
+                    console.log(`Removing item with id: ${item.item_id}`);
+                    removeFromCart(item.item_id);
                   }}
                   className="delete-button"
                 >
@@ -121,19 +128,4 @@ const Cart = () => {
   );
 };
 
-function CartErrorBoundary(props) {
-  return (
-    <ErrorBoundary
-      errorComponent={
-        <h2>
-          This listing has an error. <Link to="/">Return Home</Link> to go back
-          to the home page.
-        </h2>
-      }
-    >
-      <Cart {...props} />
-    </ErrorBoundary>
-  );
-}
-
-export default CartErrorBoundary;
+export default Cart;

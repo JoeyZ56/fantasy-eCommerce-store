@@ -1,4 +1,4 @@
-.gallery {
+.gallery-container {
   margin: auto;
   max-width: 1200px;
   padding: 20px;
@@ -8,6 +8,13 @@
     margin-bottom: 20px;
     color: #fff;
     font-size: 2rem;
+  }
+
+  @media (max-width: 1024px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 
   .gallery-images {
@@ -20,6 +27,8 @@
     @media (max-width: 1024px) {
       grid-template-columns: repeat(3, 1fr) !important;
       grid-auto-rows: calc((100vw - 30px) / 3 * 3 / 4) !important;
+      width: 80%;
+      height: 80%;
     }
 
     @media (max-width: 768px) {
@@ -58,14 +67,6 @@
     color: #fff;
   }
 }
-
-// .modal-image {
-//   width: 500px;
-//   height: 500px;
-//   object-fit: cover;
-//   border-radius: 10px;
-//   margin-bottom: 15px;
-// }
 
 .modal-btn {
   margin-top: auto;

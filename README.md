@@ -76,7 +76,7 @@
 
 ### localstoage forgetting username after an exctened period.
 
-### Deleteing items from the users cart
+### Deleteing items from the users cart (fixed)
 
 ### wishlist...everything about it!
 
