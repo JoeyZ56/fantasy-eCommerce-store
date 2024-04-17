@@ -5,7 +5,7 @@ import ErrorBoundary from "../../ErrorBoundary/ErrorBoundary";
 import "./Armor.scss";
 import addToCart from "../../api/addToCart/addToCart";
 import Buttons from "../../components/Buttons/Buttons";
-import addToWishList from "../../api/addToWishlist";
+// import addToWishList from "../../api/addToWishlist";
 
 const Armor = () => {
   const [armor, setArmor] = useState([]);
@@ -64,16 +64,16 @@ const Armor = () => {
     setShowModal(false);
   };
 
-  const handleAddToWishList = async () => {
-    try {
-      await addToWishList(selectedArmor.item_id);
-      console.log(`Successfully added ${selectedArmor.name} to wishlist.`);
-    } catch (error) {
-      console.error(`Error adding ${selectedArmor.name} to wishlist:`, error);
-    }
-    setSelectedArmor(null);
-    setShowModal(false);
-  };
+  // const handleAddToWishList = async () => {
+  //   try {
+  //     await addToWishList(selectedArmor.item_id);
+  //     console.log(`Successfully added ${selectedArmor.name} to wishlist.`);
+  //   } catch (error) {
+  //     console.error(`Error adding ${selectedArmor.name} to wishlist:`, error);
+  //   }
+  //   setSelectedArmor(null);
+  //   setShowModal(false);
+  // };
 
   return (
     <div>
@@ -107,12 +107,12 @@ const Armor = () => {
               <button onClick={handleBuyConfirmation} className="modal-btn">
                 Add To Cart
               </button>
-              <button
+              {/* <button
                 onClick={() => handleAddToWishList()}
                 className="modal-btn"
               >
                 Add To Wishlist
-              </button>
+              </button> */}
               <button onClick={handleCancelBuy} className="modal-btn">
                 Take Me back
               </button>

@@ -1,14 +1,12 @@
 import "./UserProfile.scss";
 
 const UserProfile = () => {
-  const username = localStorage.getItem("user") || "traveler"; //retieve the username from local storage
+  const username = localStorage.getItem("user") || "Traveler";
 
-  localStorage.setItem("user", username); //store the username in local storage
-  console.log("stored username", username);
-
-  if (!username) return null; //if the user is not logged in, return null
-
-  console.log("reteived username", username);
+  if (!username || username === "Traveler") {
+    return null;
+  }
+  console.log("Retrieve username ", username);
   return (
     <div>
       <h3 className="welcome">Welcome, {username}</h3>

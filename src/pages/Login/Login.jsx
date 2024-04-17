@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; // Import useNavigate instead of useHistory
 import "./Login.scss";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [formError, setFormError] = useState(null);
+  const navigate = useNavigate(); // Create navigate function to use for redirection
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,11 +17,9 @@ const Login = () => {
         {
           method: "POST",
           headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
+            "Content-Type": "application/json",
           },
-          body: `email=${encodeURIComponent(
-            email
-          )}&password=${encodeURIComponent(password)}`,
+          body: JSON.stringify({ email, password }),
         }
       );
 
@@ -28,11 +27,8 @@ const Login = () => {
         const data = await response.json();
         if (data.success && data.username) {
           console.log("Login successful:", data);
-          localStorage.setItem(
-            "user",
-            JSON.stringify({ username: data.username })
-          );
-          window.location.href = "/";
+          localStorage.setItem("user", data.username); // Storing username as a plain string
+          navigate("/"); // Using navigate to redirect without reloading the page
         } else {
           setFormError("Login failed: " + data.error);
         }
@@ -72,8 +68,6 @@ const Login = () => {
           </button>
           {formError && <p className="error">{formError}</p>}
         </form>
-
-        <Link to="/signup">Not a User?</Link>
       </div>
     </div>
   );
