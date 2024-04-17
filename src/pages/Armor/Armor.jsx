@@ -71,7 +71,10 @@ const Armor = () => {
     } catch (error) {
       console.error(`Error adding ${selectedArmor.name} to wishlist:`, error);
     }
+    setSelectedArmor(null);
+    setShowModal(false);
   };
+
   return (
     <div>
       <h2 className="armor-title">Armors</h2>

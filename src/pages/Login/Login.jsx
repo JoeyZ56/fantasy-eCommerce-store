@@ -26,17 +26,23 @@ const Login = () => {
 
       if (response.ok) {
         const data = await response.json();
-        console.log("Login successful");
-        localStorage.setItem("user", JSON.stringify(data.user));
-
-        window.location.href = "/"; // Redirect to home page
+        if (data.success && data.username) {
+          console.log("Login successful:", data);
+          localStorage.setItem(
+            "user",
+            JSON.stringify({ username: data.username })
+          );
+          window.location.href = "/";
+        } else {
+          setFormError("Login failed: " + data.error);
+        }
       } else {
-        const data = await response.text();
-        setFormError(data);
+        const errorData = await response.text();
+        setFormError("Failed to login: " + errorData);
       }
     } catch (error) {
-      console.error("Error:", error);
-      setFormError("An error occurred. Please try again later.");
+      console.error("Failed to login:", error);
+      setFormError("Failed to login: " + error.message);
     }
   };
 
