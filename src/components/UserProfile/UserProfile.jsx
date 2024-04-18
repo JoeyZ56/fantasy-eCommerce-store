@@ -3,8 +3,8 @@ import "./UserProfile.scss";
 const UserProfile = () => {
   const username = localStorage.getItem("user") || "Traveler";
 
-  if (!username || username === "Traveler") {
-    return null;
+  if (!username) {
+    return username === "Traveler";
   }
   console.log("Retrieve username ", username);
   return (
