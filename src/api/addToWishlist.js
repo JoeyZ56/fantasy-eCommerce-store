@@ -13,6 +13,8 @@ const addToWishlis = async (user_id, item_id) => {
     );
     const data = await res.json();
     console.log(data);
+    console.log("user id:", user_id);
+    console.log("item id:", item_id);
   } catch (error) {
     console.log("Error adding item to wishlist:", error.message);
   }

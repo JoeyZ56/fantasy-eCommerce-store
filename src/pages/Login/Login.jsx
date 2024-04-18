@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate instead of useHistory
+import { Link } from "react-router-dom";
 import "./Login.scss";
 
 const Login = () => {
@@ -68,6 +69,9 @@ const Login = () => {
           </button>
           {formError && <p className="error">{formError}</p>}
         </form>
+      </div>
+      <div className="link-container">
+        <Link to="/signup"> Create an account</Link>
       </div>
     </div>
   );
