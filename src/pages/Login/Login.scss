@@ -57,6 +57,13 @@
   }
 }
 
+.link-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6rem;
+}
+
 @media (max-width: 1024px) {
   .login_container {
     width: 70vw; // Increase width on smaller laptops and large tablets

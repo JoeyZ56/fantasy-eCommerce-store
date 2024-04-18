@@ -84,7 +84,11 @@ const Signup = () => {
           </button>
           {formError && <p className="error">{formError}</p>}
         </form>
-        <Link to="/login">Already a User?</Link>
+        <div className="link-container">
+          <Link to="/login" className="link">
+            Already a User?
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -72,6 +72,13 @@ a {
   }
 }
 
+.link-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6rem;
+}
+
 @media (max-width: 1024px) {
   .signup_container {
     width: 70vw; // Increase the width for better usability on smaller laptops
