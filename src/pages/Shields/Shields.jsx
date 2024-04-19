@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Modal from "../../components/Modal/Modal";
 import "./Shields.scss";
-import addToCart from "../../api/addToCart/addToCart";
+import addToCart from "../../api/addToCart";
 import Buttons from "../../components/Buttons/Buttons";
 
 const Shields = () => {

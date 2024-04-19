@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Modal from "../../components/Modal/Modal";
 import "./Potions.scss";
-import addToCart from "../../api/addToCart/addToCart";
+import addToCart from "../../api/addToCart";
 import Buttons from "../../components/Buttons/Buttons";
 
 const Potions = () => {

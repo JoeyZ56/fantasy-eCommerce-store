@@ -1,23 +1,32 @@
-const addToWishlis = async (user_id, item_id) => {
+const addToWishlist = async (item_id, user_id) => {
   try {
     const res = await fetch(
-      "http://localhost/fantasy-store-api/api/Wishlist/Wishlist.php",
+      `http://localhost/fantasy-store-api/api/wishlist/add-to-wishlist.php?item_id=${item_id}&user_id=${user_id}`,
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ user_id, item_id }),
         credentials: "include",
       }
     );
-    const data = await res.json();
-    console.log(data);
-    console.log("user id:", user_id);
-    console.log("item id:", item_id);
+
+    const responseBody = await res.json();
+
+    if (!res.ok) {
+      throw new Error(
+        responseBody.error || "Failed to add item to wishlist, Frontend Error"
+      );
+    }
+
+    console.log(
+      `Added item with id ${item_id} to the wishlist`,
+      "Updated Wishlist Data:",
+      responseBody
+    );
   } catch (error) {
-    console.log("Error adding item to wishlist:", error.message);
+    console.log("Error adding item to wishlist Frontend:", error.message);
   }
 };
 
-export default addToWishlis;
+export default addToWishlist;

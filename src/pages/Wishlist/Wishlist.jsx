@@ -9,7 +9,7 @@ const Wishlist = () => {
   const addToWishlis = async (item_id) => {
     try {
       const res = await fetch(
-        "http://localhost/fantasy-store-api/api/Wishlist/Wishlist.php",
+        "http://localhost/fantasy-store-api/api/Wishlist/get-wishlist.php",
         {
           method: "POST",
           headers: {

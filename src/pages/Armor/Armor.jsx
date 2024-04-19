@@ -3,9 +3,8 @@ import Modal from "../../components/Modal/Modal";
 import { Link } from "react-router-dom";
 import ErrorBoundary from "../../ErrorBoundary/ErrorBoundary";
 import "./Armor.scss";
-import addToCart from "../../api/addToCart/addToCart";
+import addToCart from "../../api/addToCart";
 import Buttons from "../../components/Buttons/Buttons";
-import addToWishList from "../../api/addToWishlist";
 
 const Armor = () => {
   const [armor, setArmor] = useState([]);
@@ -60,17 +59,6 @@ const Armor = () => {
   };
 
   const handleCancelBuy = () => {
-    setSelectedArmor(null);
-    setShowModal(false);
-  };
-
-  const handleAddToWishList = async () => {
-    try {
-      await addToWishList(selectedArmor.item_id);
-      console.log(`Successfully added ${selectedArmor.name} to wishlist.`);
-    } catch (error) {
-      console.error(`Error adding ${selectedArmor.name} to wishlist:`, error);
-    }
     setSelectedArmor(null);
     setShowModal(false);
   };
