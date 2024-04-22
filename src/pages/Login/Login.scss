@@ -11,9 +11,6 @@
   flex-direction: column;
   height: 50vh;
   width: 50vw;
-
-  // background-color: #f1f1f1;
-
   gap: 1rem;
 }
 
@@ -49,7 +46,7 @@
 
   display: flex;
   justify-content: center;
-  align-items: center; // Ensures vertical centering
+  align-items: center;
 
   &:hover {
     background-color: #555;
@@ -57,56 +54,59 @@
   }
 }
 
-.link-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 6rem;
-}
-
 @media (max-width: 1024px) {
-  .login_container {
-    width: 70vw; // Increase width on smaller laptops and large tablets
-    height: 60vh; // Increase height slightly
+  .login_form input {
+    width: 500px;
+    height: 60px;
   }
 
-  .login_form input {
-    width: 400px; // Slightly reduce the width of the input fields
+  .login-btn {
+    width: 200px;
+    height: 60px;
   }
 }
 
 @media (max-width: 768px) {
   .login_container {
-    width: 80vw; // Further increase the width for medium tablets
-    height: 70vh; // Further increase the height
-  }
-
-  .login_form {
-    gap: 0.8rem; // Reduce the gap between form elements
+    width: 80vw;
+    height: 70vh;
   }
 
   .login_form input {
-    width: 300px; // Reduce the width of the input fields to fit smaller screens
-    height: 45px; // Slightly reduce the height of the input fields
+    width: 500px !important;
+    height: 60px !important;
+  }
+
+  .login_form input {
+    width: 300px;
+    height: 45px;
+  }
+  .link {
+    font-size: 2rem !important;
   }
 }
 
 @media (max-width: 480px) {
   .main-container,
   .login_container {
-    flex-direction: column; // Stack elements vertically to better use space
-    justify-content: flex-start; // Align content to the top of the viewport
-    width: 100vw; // Use full viewport width
-    height: 100vh; // Expand to full viewport height
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100vw;
+    height: 100vh;
+    margin-top: 2rem;
   }
 
   .login_form input {
-    width: 90%; // Make input fields responsive based on the viewport width
-    height: 40px; // Reduce the height further for small devices
+    width: 90%;
+    height: 40px;
   }
 
   .login-btn {
     width: 80%;
     height: 30%;
+  }
+
+  .link {
+    font-size: 1.5rem !important;
   }
 }

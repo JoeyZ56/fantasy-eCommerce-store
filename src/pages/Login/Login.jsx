@@ -68,13 +68,11 @@ const Login = () => {
             Login
           </button>
           {formError && <p className="error">{formError}</p>}
+          <Link to="/signup" className="link">
+            {" "}
+            Create an account
+          </Link>
         </form>
-      </div>
-      <div className="link-container">
-        <Link to="/signup" className="link">
-          {" "}
-          Create an account
-        </Link>
       </div>
     </div>
   );
