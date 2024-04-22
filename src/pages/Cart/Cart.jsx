@@ -114,7 +114,9 @@ const Cart = () => {
               </li>
             ))}
           </ul>
-          <h4>Total Price: ${totalPrice.toFixed(2)}</h4>
+          <div className="price-container">
+            <h4 className="price">Total Price: ${totalPrice.toFixed(2)}</h4>
+          </div>
         </div>
       ) : (
         <div className="link-container">

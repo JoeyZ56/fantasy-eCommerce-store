@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import ErrorBoundary from "../../ErrorBoundary/ErrorBoundary";
 import "./Armor.scss";
 import addToCart from "../../api/addToCart";
+import addToWishlist from "../../api/addToWishlist";
 import Buttons from "../../components/Buttons/Buttons";
 
 const Armor = () => {
@@ -17,7 +18,7 @@ const Armor = () => {
         const response = await fetch(
           "http://localhost/fantasy-store-api/api/items/endpoints/getArmors.php",
           {
-            method: "POST",
+            method: "GET",
             headers: {
               "Content-Type": "application/json",
             },
@@ -59,6 +60,18 @@ const Armor = () => {
   };
 
   const handleCancelBuy = () => {
+    setSelectedArmor(null);
+    setShowModal(false);
+  };
+
+  const handleAddToWishList = async () => {
+    try {
+      await addToWishlist(selectedArmor.item_id);
+      console.log(`Successfully added ${selectedArmor.name} to the wishlist.`);
+    } catch (error) {
+      console.error(`Error adding ${selectedArmor.name} to wishlist:`, error);
+    }
+
     setSelectedArmor(null);
     setShowModal(false);
   };

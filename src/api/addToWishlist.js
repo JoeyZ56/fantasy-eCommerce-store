@@ -1,14 +1,16 @@
-const addToWishlist = async (item_id, user_id) => {
+const addToWishlist = async (item_id) => {
   try {
     const res = await fetch(
-      `http://localhost/fantasy-store-api/api/wishlist/add-to-wishlist.php?item_id=${item_id}&user_id=${user_id}`,
+      `http://localhost/fantasy-store-api/api/wishlist/add-to-wishlist.php`,
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
+        body: JSON.stringify([item_id]),
         credentials: "include",
-      }
+      },
+      console.log(`Added item with id ${item_id} to the wishlist`)
     );
 
     const responseBody = await res.json();

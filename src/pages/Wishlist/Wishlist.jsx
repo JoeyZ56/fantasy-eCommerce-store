@@ -6,23 +6,20 @@ const Wishlist = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const addToWishlis = async (item_id) => {
+  const fetchWishList = async () => {
     try {
       const res = await fetch(
         "http://localhost/fantasy-store-api/api/Wishlist/get-wishlist.php",
         {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ item_id }),
+          method: "GET",
           credentials: "include",
         }
       );
-      if (!res.ok) throw new Error("Failed to add item to wishlist");
+
+      if (!res.ok) throw new Error("Failed to fetch wishlist Frontend Error");
 
       const data = await res.json();
-      console.log("Added item to wishlist:", data);
+      console.log("Wishlist Data:", data);
 
       if (data.wishlistContents && Array.isArray(data.wishlistContents)) {
         setWishlistItems(data.wishlistContents);
@@ -30,11 +27,11 @@ const Wishlist = () => {
         setError(data.error);
         setWishlistItems([]);
       } else {
-        throw new Error("Unexpected response format");
+        throw new Error("Invalid Wishlist Data");
       }
     } catch (error) {
-      console.error("Error adding item to wishlist:", error);
-      setError(`Failed to add item to wishlist. ${error.message}`);
+      console.log("Error fetching wishlist", error);
+      setError(`Failed to fetch wishlist, ${error.message}`);
       setWishlistItems([]);
     } finally {
       setLoading(false);
@@ -42,14 +39,14 @@ const Wishlist = () => {
   };
 
   useEffect(() => {
-    addToWishlis();
+    fetchWishList();
   }, []);
 
   if (loading) {
-    return <div className="main-container">Loading...</div>;
+    return <div>Loading...</div>;
   }
   if (error) {
-    return <div className="main-container">{error}</div>;
+    return <div>{error}</div>;
   }
 
   return (
@@ -58,20 +55,10 @@ const Wishlist = () => {
       <div className="wishlist-items">
         {wishlistItems.map((item) => (
           <div key={item.item_id} className="wishlist-item">
-            <img
-              src={`http://localhost/fantasy-store-api/${item.image}`}
-              alt={item.name}
-              className="item-image"
-            />
+            <img src={item.image_url} alt={item.name} />
             <div className="item-details">
               <h2 className="item-name">{item.name}</h2>
               <p className="item-price">${item.price}</p>
-              {/* <button
-                className="remove-from-wishlist"
-                onClick={() => removeFromWishlist(item.item_id)}
-              >
-                Remove from wishlist
-              </button> */}
             </div>
           </div>
         ))}

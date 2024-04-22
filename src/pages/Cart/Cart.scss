@@ -64,15 +64,23 @@
   margin: 1rem 0;
 }
 
+.price-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
 .link-container {
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
   align-items: center !important;
+  margin-top: -1rem !important;
 }
 
 .link {
-  margin-top: -10rem;
   &:hover {
     color: rgb(53, 119, 181);
     transform: scale(1.05);
@@ -99,8 +107,7 @@
 @media (max-width: 768px) {
   .cart-container h1,
   .cart-container h2 {
-    font-size: 2rem;
-    /* Smaller text on tablets */
+    font-size: 3rem;
   }
 
   .cart-container h3,
@@ -110,9 +117,6 @@
 
   .cart-container p {
     font-size: 0.9rem;
-  }
-  .link {
-    margin-top: -2rem;
   }
 }
 
