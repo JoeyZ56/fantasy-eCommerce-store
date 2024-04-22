@@ -5,7 +5,6 @@
 
   h3 {
     font-size: 3rem;
-    color: #fff;
   }
 }
 
@@ -14,11 +13,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 80vw;
   height: 50vh;
-  width: 50vw;
-
-  //   background-color: #f1f1f1;
-
   gap: 1rem;
 }
 
@@ -27,22 +23,18 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 1rem;
+  gap: 5px;
 
   input {
-    width: 500px;
-    height: 50px;
+    width: 40vw;
+    height: 6vh;
     font-size: 1.2rem;
   }
 }
 
-.title {
-  margin-bottom: 4rem;
-}
-
 .signup-btn {
-  width: 100px;
-  height: 40px;
+  width: 20vw;
+  height: 7vh;
   background-color: #333;
   color: #fff;
   font-size: 1.5rem;
@@ -50,7 +42,6 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: 0.4s;
 
   &:hover {
     background-color: #555;
@@ -58,88 +49,74 @@
   }
 }
 
-a {
-  margin-top: 2rem;
-  font-size: 2rem;
-
+.link {
+  font-size: 2.5rem;
   color: #fff;
-  cursor: pointer;
-  transition: 0.4s;
-
-  &:hover {
-    color: red;
-    transition: 0.4s;
-  }
-}
-
-.link-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 6rem;
+  margin-top: 2vh;
 }
 
 @media (max-width: 1024px) {
   .signup_container {
-    width: 70vw; // Increase the width for better usability on smaller laptops
-    height: 60vh; // Slightly increase the height
+    width: 80vw;
+    height: 50vh;
   }
 
   .signup_form input {
-    width: 400px; // Reduce the input width to better fit the screen
+    width: 60vw;
+    height: 5vh;
   }
 
-  .main-container h3 {
-    font-size: 2.5rem; // Slightly reduce the font size
+  .signup-btn {
+    width: 30vw;
+    height: 5vh;
   }
 }
 
 @media (max-width: 768px) {
   .signup_container {
-    width: 80vw; // Further increase the width for tablets
-    height: 70vh; // Adjust the height to maintain form usability
-  }
-
-  .signup_form {
-    gap: 0.8rem; // Reduce the gap between form elements
+    width: 80vw;
+    height: 70vh;
   }
 
   .signup_form input {
-    width: 300px; // Further reduce the input width
-    height: 45px; // Slightly reduce the input height
+    width: 60vw;
+    height: 5vh;
   }
 
   .signup-btn {
-    width: 80%;
-    height: 30%;
+    width: 30vw;
+    height: 5vh;
   }
 
-  a {
-    font-size: 1.5rem; // Reduce the font size of the link
+  .link {
+    font-size: 2rem !important;
   }
 }
 
 @media (max-width: 480px) {
   .signup_container {
-    width: 95vw; // Use almost the full width of very small screens
-    height: 80vh; // Increase the height to accommodate stacked elements
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 60vw;
+    height: 50vh;
+    margin-top: 2rem;
+
+    h3 {
+      font-size: 1.5rem;
+    }
   }
 
   .signup_form input {
-    width: 90%; // Make the input width responsive to the screen width
-    height: 40px; // Minimize the input height to save space
+    width: 60vw;
+    height: 5vh;
   }
 
   .signup-btn {
-    width: 80%;
-    height: 30%;
+    width: 40vw;
+    height: 7vh;
   }
 
-  .main-container h3 {
-    font-size: 2rem; // Reduce the font size significantly for small devices
-  }
-
-  a {
-    font-size: 1.2rem; // Further reduce the font size for readability on small devices
+  .link {
+    font-size: 1.5rem !important;
   }
 }
