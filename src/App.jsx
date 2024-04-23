@@ -18,6 +18,7 @@ const App = () => {
       <div className="nav_header">
         <Navbar />
       </div>
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/armor" element={<Armor />} />

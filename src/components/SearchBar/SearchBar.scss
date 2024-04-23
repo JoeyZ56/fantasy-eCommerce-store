@@ -1,0 +1,28 @@
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-bar {
+  width: 40vw;
+  height: 5vh;
+}
+.search-btn {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 10px 0;
+  padding: 10px 20px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #0056b3;
+    transition: 0.4s;
+    scale: 1.1;
+  }
+}

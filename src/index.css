@@ -14,3 +14,7 @@ body {
   object-fit: cover;
   color: white;
 }
+
+a {
+  color: white;
+}

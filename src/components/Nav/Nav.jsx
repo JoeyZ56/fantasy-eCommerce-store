@@ -4,6 +4,7 @@ import "./Nav.scss";
 import Logout from "../Logout/Logout";
 import Logo from "../../assets/myssticrealmslogo.png";
 import UserProfile from "../UserProfile/UserProfile";
+import SearchBar from "../SearchBar/SearchBar";
 
 export default function Navbar() {
   return (
@@ -15,6 +16,9 @@ export default function Navbar() {
             <UserProfile />
           </div>
         </header>
+        <div className="search-bar">
+          <SearchBar />
+        </div>
         <br />
         <Menu.Button className="menu-btn">
           {" "}

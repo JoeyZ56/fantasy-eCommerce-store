@@ -19,6 +19,15 @@
   align-items: center;
 }
 
+@media (max-width: 1024px) {
+  .embla {
+    width: 70vw;
+    height: 35vh;
+
+    margin-top: 2.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .embla {
     width: 100% !important;
