@@ -83,6 +83,23 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .modal-btn {
+    width: 30% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-image {
+    width: 500px !important;
+    height: 500px !important;
+  }
+
+  .modal-btn {
+    width: 30% !important;
+  }
+}
+
 @media (max-width: 480px) {
   .modal-image {
     width: 300px !important;
