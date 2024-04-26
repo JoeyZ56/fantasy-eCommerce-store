@@ -37,8 +37,10 @@
 }
 
 @media screen and (max-width: 480px) {
+  .search-bar {
+    display: none;
+  }
   .search-btn {
-    width: 70%;
-    height: auto;
+    display: none;
   }
 }
