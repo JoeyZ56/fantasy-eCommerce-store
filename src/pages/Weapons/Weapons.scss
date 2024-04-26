@@ -104,4 +104,27 @@
     background-color: darken(#353c43, 10%);
     transition: background-color 0.3s ease-in-out;
   }
+
+  @media (max-width: 768px) {
+    .modal-btns {
+      flex-direction: column;
+      align-items: center;
+    }
+    .modal-btn {
+      width: 50% !important;
+      gap: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .modal-btns {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .modal-btn {
+      width: 100% !important;
+      gap: 10px;
+    }
+  }
 }
