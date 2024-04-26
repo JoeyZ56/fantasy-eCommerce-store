@@ -3,6 +3,11 @@
   margin-bottom: 20px;
   color: #fff;
   font-size: 3rem;
+
+  @media screen and (max-width: 480px) {
+    font-size: 2rem;
+    margin-top: 3rem;
+  }
 }
 
 .weapon-list {

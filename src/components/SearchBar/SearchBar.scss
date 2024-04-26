@@ -26,3 +26,19 @@
     scale: 1.1;
   }
 }
+@media screen and (max-width: 1024px) {
+  .search-bar {
+    width: 40vw;
+    height: 5vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 480px) {
+  .search-btn {
+    width: 70%;
+    height: auto;
+  }
+}
