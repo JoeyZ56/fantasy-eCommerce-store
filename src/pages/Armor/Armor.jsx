@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import ErrorBoundary from "../../ErrorBoundary/ErrorBoundary";
 import "./Armor.scss";
 import addToCart from "../../api/addToCart";
-import addToWishlist from "../../api/addToWishlist";
+// import addToWishlist from "../../api/addToWishlist";
 import Buttons from "../../components/Buttons/Buttons";
 
 const Armor = () => {
@@ -64,17 +64,17 @@ const Armor = () => {
     setShowModal(false);
   };
 
-  const handleAddToWishList = async () => {
-    try {
-      await addToWishlist(selectedArmor.item_id);
-      console.log(`Successfully added ${selectedArmor.name} to the wishlist.`);
-    } catch (error) {
-      console.error(`Error adding ${selectedArmor.name} to wishlist:`, error);
-    }
+  // const handleAddToWishList = async () => {
+  //   try {
+  //     await addToWishlist(selectedArmor.item_id);
+  //     console.log(`Successfully added ${selectedArmor.name} to the wishlist.`);
+  //   } catch (error) {
+  //     console.error(`Error adding ${selectedArmor.name} to wishlist:`, error);
+  //   }
 
-    setSelectedArmor(null);
-    setShowModal(false);
-  };
+  //   setSelectedArmor(null);
+  //   setShowModal(false);
+  // };
 
   return (
     <div>
@@ -103,17 +103,19 @@ const Armor = () => {
               height={200}
               className="modal-image"
             />
-            <h3>${selectedArmor.price}</h3>
+            <div className="model-price-container">
+              <h3 className="model-price">${selectedArmor.price}</h3>
+            </div>
             <div className="modal-btns">
               <button onClick={handleBuyConfirmation} className="modal-btn">
                 Add To Cart
               </button>
-              <button
+              {/* <button
                 onClick={() => handleAddToWishList()}
                 className="modal-btn"
               >
                 Add To Wishlist
-              </button>
+              </button> */}
               <button onClick={handleCancelBuy} className="modal-btn">
                 Take Me back
               </button>
