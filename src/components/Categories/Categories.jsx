@@ -4,7 +4,6 @@ import "./Categories.scss";
 const Categories = () => {
   return (
     <div className="cat_container">
-      <h1 className="cat_title">Categories</h1>
       <div className="cat_list-container">
         <ul className="cat_ul">
           <li>
