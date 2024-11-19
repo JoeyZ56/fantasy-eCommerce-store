@@ -5,40 +5,33 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: rgba(93, 93, 93, 0.8);
-  border: black 1px solid;
-
+  background-color: rgba(68, 67, 67, 0.8);
+  width: 100vw;
   margin-top: 0.5rem;
-}
 
-.cat_ul {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: row;
-  margin: 0;
-  padding: 0;
-  gap: 5rem;
-}
+  .cat_ul {
+    display: flex;
+    flex-direction: row;
+    gap: 6rem;
 
-.cat_ul li,
-a {
-  list-style: none;
-  margin: 0 1rem;
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 10px;
+    li,
+    a {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 10px;
 
-  text-decoration: none;
+      text-decoration: none;
 
-  cursor: pointer;
-  transition: 0.4s;
-  display: flex;
-}
+      cursor: pointer;
+      transition: 0.4s;
+      display: flex;
 
-.cat_ul a:hover {
-  color: rgb(53, 119, 181);
-  transform: scale(1.05);
+      a:hover {
+        color: #000;
+        transform: scale(1.1);
+      }
+    }
+  }
 }
 
 @media (max-width: 1024px) {
@@ -49,7 +42,7 @@ a {
 
   .cat_container {
     flex: 1; // Ensures the container takes full available space
-    padding: 20px; // Adds padding to avoid elements touching the edges
+    padding: 20px;
   }
 
   .cat_ul {
@@ -79,6 +72,7 @@ a {
 
   .cat_title {
     display: none;
+    font-size: 2.5rem;
   }
 
   .cat_container {
