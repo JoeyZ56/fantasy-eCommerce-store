@@ -16,9 +16,9 @@ export default function Navbar() {
             <UserProfile />
           </div>
         </header>
-        {/* <div className="search-bar">
-          <SearchBar />
-        </div> */}
+        <div className="header_title">
+          <h1>Mysstic Realms</h1>
+        </div>
         <br />
         <Menu.Button className="menu-btn">
           {" "}
