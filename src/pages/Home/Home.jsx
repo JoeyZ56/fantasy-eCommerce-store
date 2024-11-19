@@ -1,23 +1,25 @@
 import EmblaCarousel from "../../components/Carousel/Carousel";
 import Categories from "../../components/Categories/Categories";
-import Gallery from "../../components/Gallery/Gallery";
-import Footer from "../../components/Footer/Footer";
+// import Gallery from "../../components/Gallery/Gallery";
+// import Footer from "../../components/Footer/Footer";
+import "./styles.scss";
 
 const Home = () => {
   return (
-    <div>
-      <div>
-        <EmblaCarousel />
-      </div>
+    <div className="home-page-main-contianer">
       <div>
         <Categories />
       </div>
       <div>
+        <EmblaCarousel />
+      </div>
+
+      {/* <div>
         <Gallery />
-      </div>
-      <div>
+      </div> */}
+      {/* <div>
         <Footer />
-      </div>
+      </div> */}
     </div>
   );
 };
