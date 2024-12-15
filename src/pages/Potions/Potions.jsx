@@ -79,7 +79,7 @@ const Potions = () => {
               height={200}
               className="modal-image"
             />
-            <h3>${selectedPotion.price}</h3>
+            <h3>Total: ${selectedPotion.price}</h3>
             <div className="modal-btns">
               <button onClick={handleBuyConfirmation} className="modal-btn">
                 Add To Cart

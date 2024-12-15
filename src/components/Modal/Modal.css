@@ -4,7 +4,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* background-image: url("../../assets/fantasybackground.webp"); */
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -36,7 +35,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   /* background-color: white; */
-  background-image: url("../../assets/fantasybackground2.webp");
+  background-color: rgba(88, 87, 87, 0.558);
   padding: 20px;
   border: 1px solid black;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

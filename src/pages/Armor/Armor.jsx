@@ -104,7 +104,7 @@ const Armor = () => {
               className="modal-image"
             />
             <div className="model-price-container">
-              <h3 className="model-price">${selectedArmor.price}</h3>
+              <h3 className="model-price">Total: ${selectedArmor.price}</h3>
             </div>
             <div className="modal-btns">
               <button onClick={handleBuyConfirmation} className="modal-btn">

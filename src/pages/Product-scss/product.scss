@@ -50,7 +50,6 @@
     background-color: #373839;
     color: white;
     font-size: 1rem;
-
     cursor: pointer;
   }
 
@@ -91,10 +90,16 @@
   }
 }
 
+.main-contianer {
+  padding: 20px;
+  height: 100%;
+}
+
 .modal-container h1,
 .modal-container h3 {
   text-align: center;
   color: #fff;
+  font-size: 1.5rem;
 }
 
 .modal-image {
@@ -117,8 +122,7 @@
   align-items: center;
 }
 .model-price {
-  font-size: 1.5rem;
-  background-color: rgba(0, 0, 0, 0.7);
+  // font-size: 1.5rem;
   border-radius: 5px;
   text-align: center;
   margin-bottom: 10px;
@@ -129,13 +133,15 @@
   padding: 10px 20px;
   background-color: #373839;
   color: white;
-  border: none;
+  font-size: 1rem;
   cursor: pointer;
 }
 
 .modal-btn:hover {
   background-color: darken(#373839, 10%);
-  transition: background-color 0.3s ease-in-out;
+  border-color: #fff;
+  scale: 1.1;
+  transition: scale 0.3s ease-in-out;
 }
 
 @media (max-width: 768px) {

@@ -79,7 +79,7 @@ const Weapons = () => {
               height={200}
               className="modal-image"
             />
-            <h3>${selectedWeapon.price}</h3>
+            <h3>Total: ${selectedWeapon.price}</h3>
             <div className="modal-btns">
               <button onClick={handleBuyConfirmation} className="modal-btn">
                 Add To Cart
