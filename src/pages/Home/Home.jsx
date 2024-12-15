@@ -2,7 +2,7 @@ import EmblaCarousel from "../../components/Carousel/Carousel";
 import Categories from "../../components/Categories/Categories";
 // import Gallery from "../../components/Gallery/Gallery";
 // import Footer from "../../components/Footer/Footer";
-import "./styles.scss";
+import "./Home.scss";
 
 const Home = () => {
   return (

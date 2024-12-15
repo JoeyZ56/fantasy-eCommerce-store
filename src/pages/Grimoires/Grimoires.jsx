@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Modal from "../../components/Modal/Modal";
-import "./Grimoires.scss";
+import "../Product-scss/product.scss";
 import addToCart from "../../api/addToCart";
 import Buttons from "../../components/Buttons/Buttons";
 
@@ -54,14 +54,14 @@ const Grimoires = () => {
 
   return (
     <div>
-      <h2 className="grimoire-title">Grimoires</h2>
-      <ul className="grimoire-list">
+      <h2 className="title">Grimoires</h2>
+      <ul className="list">
         {grimoires.map((item, index) => (
-          <li key={index} className="grimoire-item">
+          <li key={index} className="item">
             <h3>{item.name}</h3>
             <img src={item.image_url} alt={item.name} />
             <p>{item.description}</p>
-            <p className="grimoire-item-price">${item.price}</p>
+            <p className="item-price">${item.price}</p>
             <button onClick={() => handleBuyClick(item)}>
               Buy {item.name}
             </button>

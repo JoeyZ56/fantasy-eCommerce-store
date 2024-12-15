@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Modal from "../../components/Modal/Modal";
 import { Link } from "react-router-dom";
 import ErrorBoundary from "../../ErrorBoundary/ErrorBoundary";
-import "./Armor.scss";
+import "../Product-scss/product.scss";
 import addToCart from "../../api/addToCart";
 // import addToWishlist from "../../api/addToWishlist";
 import Buttons from "../../components/Buttons/Buttons";
@@ -77,15 +77,15 @@ const Armor = () => {
   // };
 
   return (
-    <div>
-      <h2 className="armor-title">Armors</h2>
-      <ul className="armor-list">
+    <div className="main-contianer">
+      <h2 className="title">Armors</h2>
+      <ul className="list">
         {armor.map((item, index) => (
-          <li key={index} className="armor-item">
+          <li key={index} className="item">
             <h3>{item.name}</h3>
             <img src={item.image_url} alt={item.name} />
             <p>{item.description}</p>
-            <p className="armor-item-price">${item.price}</p>
+            <p className="item-price">${item.price}</p>
             <button onClick={() => handleBuyClick(item)}>
               Add {item.name} to Cart
             </button>

@@ -1,4 +1,9 @@
-.armor-title {
+.main-contianer {
+  padding: 20px;
+  height: 100%;
+}
+
+.title {
   text-align: center;
   margin-bottom: 20px;
   color: #fff;
@@ -10,7 +15,7 @@
   }
 }
 
-.armor-list {
+.list {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -19,7 +24,7 @@
   justify-content: space-around;
 }
 
-.armor-item {
+.item {
   width: calc(33.333% - 20px);
   margin: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -27,7 +32,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(93, 93, 93, 0.5);
+  background-color: rgba(249, 245, 245, 0.258);
   border-radius: 5%;
   color: #fff;
 
@@ -44,40 +49,43 @@
     padding: 10px 20px;
     background-color: #373839;
     color: white;
-    border: none;
+    font-size: 1rem;
+
     cursor: pointer;
   }
 
   button:hover {
     background-color: darken(#373839, 10%);
-    transition: background-color 0.3s ease-in-out;
+    border-color: #fff;
+    scale: 1.1;
+    transition: scale 0.3s ease-in-out;
   }
 }
 
-.armor-item-price {
-  font-size: 2rem;
+.item-price {
+  font-size: 1.5rem;
 }
 
 @media (max-width: 768px) {
-  .armor-item {
+  .item {
     width: calc(50% - 20px);
   }
 
-  .armor-title {
+  .title {
     font-size: 2rem;
   }
 }
 
 @media (max-width: 480px) {
-  .armor-item {
+  .item {
     width: 100%;
   }
 
-  .armor-title {
+  .title {
     font-size: 1.5rem;
   }
 
-  .armor-item img {
+  .item img {
     width: 100%;
     height: auto;
   }

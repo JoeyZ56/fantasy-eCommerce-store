@@ -83,7 +83,7 @@ const Signup = () => {
             {loading ? "Loading..." : "Sign Up"}
           </button>
           {formError && <p className="error">{formError}</p>}
-          <Link to="/login" className="link">
+          <Link to="/login" className="signup-link">
             Already a User?
           </Link>
         </form>

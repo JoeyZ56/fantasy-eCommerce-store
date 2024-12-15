@@ -19,7 +19,7 @@ const UserProfile = () => {
   }, []);
 
   return (
-    <div>
+    <div className="profile-main-container">
       <h3 className="welcome">Welcome, {username}</h3>
     </div>
   );

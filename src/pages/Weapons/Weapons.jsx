@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Modal from "../../components/Modal/Modal";
-import "./Weapons.scss";
+import "../Product-scss/product.scss";
 import addToCart from "../../api/addToCart";
 import Buttons from "../../components/Buttons/Buttons";
 
@@ -54,14 +54,14 @@ const Weapons = () => {
 
   return (
     <div>
-      <h2 className="weapon-title">Weapons</h2>
-      <ul className="weapon-list">
+      <h2 className="title">Weapons</h2>
+      <ul className="list">
         {weapons.map((item, index) => (
-          <li key={index} className="weapon-item">
+          <li key={index} className="item">
             <h3>{item.name}</h3>
             <img src={item.image_url} alt={item.name} />
             <p>{item.description}</p>
-            <p className="weapon-item-price">${item.price}</p>
+            <p className="item-price">${item.price}</p>
             <button onClick={() => handleBuyClick(item)}>
               Buy {item.name}
             </button>

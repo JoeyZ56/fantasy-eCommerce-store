@@ -69,7 +69,7 @@ const Login = () => {
             Login
           </button>
           {formError && <p className="error">{formError}</p>}
-          <Link to="/signup" className="link">
+          <Link to="/signup" className="login-link">
             {" "}
             Create an account
           </Link>

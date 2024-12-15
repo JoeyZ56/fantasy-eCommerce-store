@@ -2,7 +2,7 @@ import { Menu } from "@headlessui/react";
 import { Link } from "react-router-dom";
 import "./Nav.scss";
 import Logout from "../Logout/Logout";
-import Logo from "../../assets/myssticrealmslogo.png";
+import Logo from "../../assets/mysstic-realms.png";
 import UserProfile from "../UserProfile/UserProfile";
 // import SearchBar from "../SearchBar/SearchBar";
 
@@ -69,13 +69,13 @@ export default function Navbar() {
               </Link>
             )}
           </Menu.Item>
-          <Menu.Item>
+          {/* <Menu.Item>
             {({ active }) => (
               <Link className={`${active && "bg-blue-500"}`} to="/wishlist">
                 📜 Wishlist
               </Link>
             )}
-          </Menu.Item>
+          </Menu.Item> */}
           <Menu.Item>
             {({ active }) => (
               <Link className={`${active && "bg-blue-500"}`} to="/cart">

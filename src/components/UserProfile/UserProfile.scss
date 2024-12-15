@@ -1,10 +1,10 @@
-.welcome {
-  color: white;
-  font-size: 30px;
-
-  background-color: rgba(0, 0, 0, 0.5);
-
-  padding: 5px;
+.profile-main-container {
+  .welcome {
+    color: white;
+    font-size: 30px;
+    // background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+  }
 }
 
 @media (max-width: 768px) {

@@ -6,10 +6,8 @@
 
   .header_title {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    margin-left: 5%;
-
     font-size: 2rem;
     font-weight: 600;
     color: #fff;
@@ -64,8 +62,9 @@
   }
 
   .logo {
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
   }
 
   .logout-btn-container {
