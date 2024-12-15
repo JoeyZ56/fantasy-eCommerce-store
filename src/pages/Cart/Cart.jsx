@@ -92,7 +92,7 @@ const Cart = () => {
 
   return (
     <div className="cart-container">
-      <h2>Cart</h2>
+      <h2>Cart Items:</h2>
       {cartItems.length > 0 ? (
         <div className="cart-info">
           <ul>
