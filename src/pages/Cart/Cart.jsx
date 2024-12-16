@@ -52,9 +52,10 @@ const Cart = () => {
       console.error("No item id provided to remove from cart");
       return;
     }
+    const apiKey = import.meta.env.VITE_API_KEY;
     try {
       const response = await fetch(
-        `http://localhost/fantasy-store-api/api/cart/endpoints/removeFromCart.php?item_id=${item_id}`,
+        `${apiKey}/api/cart/endpoints/removeFromCart.php?item_id=${item_id}`,
         {
           method: "DELETE",
           credentials: "include",

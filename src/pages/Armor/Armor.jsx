@@ -14,9 +14,10 @@ const Armor = () => {
 
   useEffect(() => {
     const fetchArmor = async () => {
+      const apiKey = import.meta.env.VITE_API_KEY;
       try {
         const response = await fetch(
-          "http://localhost/fantasy-store-api/api/items/endpoints/getArmors.php",
+          `${apiKey}/api/items/endpoints/getArmors.php`,
           {
             method: "GET",
             headers: {

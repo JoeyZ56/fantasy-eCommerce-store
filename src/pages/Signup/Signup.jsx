@@ -23,16 +23,14 @@ const Signup = () => {
     setLoading(true);
 
     try {
-      const response = await fetch(
-        "http://localhost/fantasy-store-api/api/user/process-signup.php",
-        {
-          method: "POST",
-          body: formData,
-          headers: {
-            Accept: "application/json", // Ensuring we're expecting a JSON response
-          },
-        }
-      );
+      const apiKey = import.meta.env.VITE_API_KEY;
+      const response = await fetch(`${apiKey}/api/user/process-signup.php`, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json", // Ensuring we're expecting a JSON response
+        },
+      });
 
       const data = await response.json();
       setLoading(false);

@@ -12,16 +12,14 @@ const Logout = () => {
   }, []);
 
   const handleLogout = async () => {
+    const apiKey = import.meta.env.VITE_API_KEY;
     try {
-      const res = await fetch(
-        "http://localhost/fantasy-store-api/api/user/logout.php",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-        }
-      );
+      const res = await fetch(`${apiKey}/api/user/logout.php`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+      });
 
       if (res.ok) {
         const data = await res.json();

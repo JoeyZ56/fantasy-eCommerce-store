@@ -12,8 +12,9 @@ const Potions = () => {
   useEffect(() => {
     const fetchPotions = async () => {
       try {
+        const apiKey = import.meta.env.VITE_API_KEY;
         const response = await fetch(
-          "http://localhost/fantasy-store-api/api/items/endpoints/getPotions.php"
+          `${apiKey}/api/items/endpoints/getPotions.php`
         );
 
         if (!response.ok) {

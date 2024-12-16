@@ -3,6 +3,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  // height: 75vh;
   gap: 20px;
+}
+
+@media (min-width: 344px) and (max-width: 767px) {
+  .home-page-main-contianer {
+    height: 80vh;
+  }
 }

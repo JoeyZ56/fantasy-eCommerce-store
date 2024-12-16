@@ -13,17 +13,15 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(
-        "http://localhost/fantasy-store-api/api/user/login.php",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email, password }),
-          credentials: "include",
-        }
-      );
+      const apiKey = import.meta.env.VITE_API_KEY;
+      const response = await fetch(`${apiKey}/api/user/login.php`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+        credentials: "include",
+      });
 
       if (response.ok) {
         const data = await response.json();

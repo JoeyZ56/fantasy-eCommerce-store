@@ -12,8 +12,9 @@ const Shields = () => {
   useEffect(() => {
     const fetchShields = async () => {
       try {
+        const apiKey = import.meta.env.VITE_API_KEY;
         const response = await fetch(
-          "http://localhost/fantasy-store-api/api/items/endpoints/getShields.php"
+          `${apiKey}/api/items/endpoints/getShields.php`
         );
 
         if (!response.ok) {

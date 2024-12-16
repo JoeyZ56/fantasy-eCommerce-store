@@ -11,9 +11,10 @@ const Grimoires = () => {
 
   useEffect(() => {
     const fetchGrimoires = async () => {
+      const apiKey = import.meta.env.VITE_API_KEY;
       try {
         const response = await fetch(
-          "http://localhost/fantasy-store-api/api/items/endpoints/getGrimoires.php"
+          `${apiKey}/api/items/endpoints/getGrimoires.php`
         );
 
         if (!response.ok) {

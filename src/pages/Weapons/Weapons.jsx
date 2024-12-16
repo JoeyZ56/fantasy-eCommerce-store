@@ -12,8 +12,9 @@ const Weapons = () => {
   useEffect(() => {
     const fetchWeapons = async () => {
       try {
+        const apiKey = import.meta.env.VITE_API_KEY;
         const response = await fetch(
-          "http://localhost/fantasy-store-api/api/items/endpoints/getWeapons.php"
+          `${apiKey}/api/items/endpoints/getWeapons.php`
         );
 
         if (!response.ok) {
